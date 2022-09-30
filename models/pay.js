@@ -17,4 +17,4 @@ const User = mongoose.model('Pay', paySchema)
 
 export {
   Pay
-}
+} 

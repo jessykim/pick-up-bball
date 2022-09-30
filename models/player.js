@@ -2,6 +2,18 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const notesSchema = new Schema({
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "Player"
+  },
+  notes: String,
+  stats: String,
+  goals: String,
+}, {
+  timestamps: true
+})
+
 const playerSchema = new Schema({
   owner: {
     type: Schema.Types.ObjectId, 
@@ -13,6 +25,7 @@ const playerSchema = new Schema({
   },
   objective: String,
   teams: String,
+  notes: [notesSchema]
 }, {
   timestamps: true
 })
