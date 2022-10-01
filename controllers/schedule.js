@@ -1,7 +1,7 @@
-import { Day } from "../models/day.js"
+
 
 function index(req, res) {
-  res.render('days/index', {
+  res.render('schedule/index', {
     title: 'Schedule'
   })
 }
