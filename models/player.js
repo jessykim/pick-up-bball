@@ -23,8 +23,7 @@ const playerSchema = new Schema({
     type: String, 
     enum: ["no preference", "center", "power forward", "small forward", "point guard", "shooting guard"]
   },
-  objective: String,
-  teams: String,
+  level: String,
   notes: [notesSchema]
 }, {
   timestamps: true
