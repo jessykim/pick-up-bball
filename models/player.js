@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const notesSchema = new Schema({
   owner: {
     type: Schema.Types.ObjectId,
-    ref: "Player"
+    ref: "Profile"
   },
   notes: String,
   stats: String,
@@ -19,6 +19,7 @@ const playerSchema = new Schema({
     type: Schema.Types.ObjectId, 
     ref: "Profile"
   },
+  name: String,
   position: {
     type: String, 
     enum: ["no preference", "center", "power forward", "small forward", "point guard", "shooting guard"]

@@ -1,8 +1,21 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/players/new.css" />
+<%- include('../partials/nav') %>
 
-<main>
-  <h1><%= title %></h1>
-  <form action="/players" method="POST">
-    <p>If you'd like to have your name listed to play, please click the button below.</p>
-    <button type="submit">put me in coach!</button>
-  </form>
-</main>
+
+  <main>
+    <h1><%= title %></h1>
+    <p>If you'd like to play, please add your name to the list.</p>
+    <select>
+      <% players.forEach(function(player) { %>
+        <option><%= player.name %></option>
+      <% }) %>
+    </select>
+    <form action="/players" method="POST">
+      <label>Player Name:</label>
+      <input type="text" name="name">
+      <button type="submit">put me in coach!</button>
+    </form>
+  </main>
+
+  <%- include('../partials/footer') %>
