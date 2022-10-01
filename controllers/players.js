@@ -27,7 +27,16 @@ function create(req, res) {
 }
 
 function index(req, res) {
-  console.log('index is working!')
+  Player.find({})
+  .then(players => {
+    res.render('players/index', {
+      title: 'Join the Team',
+      players
+    })
+  }).catch(err => {
+    console.log(err)
+    res.redirect('/players')
+  })
 }
 
 export {
