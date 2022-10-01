@@ -8,6 +8,10 @@ function newPlayer(req, res) {
       players
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/players/new')
+  })
 }
 
 function create(req, res) {
@@ -16,10 +20,18 @@ function create(req, res) {
   .then(player => {
     res.redirect('/players/new')
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/players/new')
+  })
+}
 
+function index(req, res) {
+  console.log('index is working!')
 }
 
 export {
   newPlayer as new,
   create,
+  index,
 }

@@ -3,6 +3,9 @@ import * as playersCtrl from '../controllers/players.js'
 
 const router = Router()
 
+// GET /players
+router.get('/', playersCtrl.index)
+
 // GET /players/new
 router.get('/new', playersCtrl.new)
 
