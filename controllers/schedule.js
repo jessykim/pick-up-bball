@@ -6,6 +6,13 @@ function index(req, res) {
   })
 }
 
+function indexSunday(req, res) {
+  res.render('schedule/sunday', {
+    title: 'Sunday'
+  })
+}
+
 export {
   index,
+  indexSunday,
 }
