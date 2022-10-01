@@ -7,7 +7,25 @@ const router = Router()
 router.get('/', scheduleCtrl.index)
 
 // GET /schedule/sunday
-router.get('/sunday', scheduleCtrl.indexSunday)
+router.get('/sunday', scheduleCtrl.sunday)
+
+// GET /schedule/monday
+router.get('/monday', scheduleCtrl.monday)
+
+// GET /schedule/tuesday
+router.get('/tuesday', scheduleCtrl.tuesday)
+
+// GET /schedule/wednesday
+router.get('/wednesday', scheduleCtrl.wednesday)
+
+// GET /schedule/thursday
+router.get('/thursday', scheduleCtrl.thursday)
+
+// GET /schedule/friday
+router.get('/friday', scheduleCtrl.friday)
+
+// GET /schedule/saturday
+router.get('/saturday', scheduleCtrl.saturday)
 
 export {
   router
