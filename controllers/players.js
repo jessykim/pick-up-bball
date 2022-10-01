@@ -6,6 +6,11 @@ function newPlayer(req, res) {
   })
 }
 
+function create(req, res) {
+  console.log('creating a new player!');
+}
+
 export {
   newPlayer as new,
+  create,
 }
