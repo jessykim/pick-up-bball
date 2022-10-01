@@ -15,7 +15,7 @@ const daySchema = new Schema({
   timestamps: true
 })
 
-const Player = mongoose.model('Day', daySchema)
+const Day = mongoose.model('Day', daySchema)
 
 export {
   Day
