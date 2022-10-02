@@ -21,7 +21,7 @@ import'./config/passport.js'
 // import routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
-import { router as playersRouter } from './routes/players.js'
+import { router as profilesRouter } from './routes/profiles.js'
 import { router as schedulesRouter } from './routes/schedules.js'
 
 // create the express app
@@ -67,7 +67,7 @@ app.use(passDataToView)
 // router middleware
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
-app.use('/players', playersRouter)
+app.use('/profiles', profilesRouter)
 app.use('/schedules', schedulesRouter)
 
 // catch 404 and forward to error handler

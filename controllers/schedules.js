@@ -1,5 +1,5 @@
 import { Schedule } from '../models/schedule.js'
-import { Player } from '../models/player.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   res.render('schedules/index', {
@@ -8,7 +8,6 @@ function index(req, res) {
 }
 
 function sunday(req, res) {
-  console.log(Player.find({}))
   // console.log(Player.findById(req.params.id));
   // .populate('players')
   // .then(() => {
