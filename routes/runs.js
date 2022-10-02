@@ -4,7 +4,7 @@ import * as runsCtrl from '../controllers/runs.js'
 const router = Router()
 
 // GET /schedules
-router.get('/', runCtrl.index)
+router.get('/', runsCtrl.index)
 
 export {
   router
