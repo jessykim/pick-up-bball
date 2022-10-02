@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const notesSchema = new Schema({
   owner: {
     type: Schema.Types.ObjectId,
-    ref: "Profile"
+    ref: "Player"
   },
   notes: String,
   stats: String,

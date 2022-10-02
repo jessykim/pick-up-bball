@@ -6,12 +6,6 @@ const router = Router()
 // GET /players
 router.get('/', playersCtrl.index)
 
-// GET /players/new
-router.get('/new', playersCtrl.new)
-
-// POST /players
-router.post('/', playersCtrl.create)
-
 export {
   router
 }

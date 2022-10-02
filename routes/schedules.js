@@ -1,30 +1,30 @@
 import { Router } from 'express'
-import * as scheduleCtrl from '../controllers/schedule.js'
+import * as scheduleCtrl from '../controllers/schedules.js'
 
 const router = Router()
 
-// GET /schedule
+// GET /schedules
 router.get('/', scheduleCtrl.index)
 
-// GET /schedule/sunday
+// GET /schedules/sunday
 router.get('/sunday', scheduleCtrl.sunday)
 
-// GET /schedule/monday
+// GET /schedules/monday
 router.get('/monday', scheduleCtrl.monday)
 
-// GET /schedule/tuesday
+// GET /schedules/tuesday
 router.get('/tuesday', scheduleCtrl.tuesday)
 
-// GET /schedule/wednesday
+// GET /schedules/wednesday
 router.get('/wednesday', scheduleCtrl.wednesday)
 
-// GET /schedule/thursday
+// GET /schedules/thursday
 router.get('/thursday', scheduleCtrl.thursday)
 
-// GET /schedule/friday
+// GET /schedules/friday
 router.get('/friday', scheduleCtrl.friday)
 
-// GET /schedule/saturday
+// GET /schedules/saturday
 router.get('/saturday', scheduleCtrl.saturday)
 
 export {
