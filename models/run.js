@@ -3,11 +3,11 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const runSchema = new Schema({
-  day: String,
+  date: String,
   time: String,
   location: String,
   host: String,
-  comments: String,
+  note: String,
   profiles: [{ type: Schema.Types.ObjectId, ref: 'Profile' }]
 }, {
   timestamps: true
