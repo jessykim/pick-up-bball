@@ -8,7 +8,9 @@ function index(req, res) {
 }
 
 function newRun(req, res) {
-  console.log('adding runs!')
+  res.render('runs/new', {
+    title: 'Create Run'
+  })
 }
 
 export {
