@@ -13,7 +13,12 @@ function newRun(req, res) {
   })
 }
 
+function create(req, res) {
+  console.log('post is working!')
+}
+
 export {
   index,
   newRun as new,
+  create,
 }
