@@ -16,6 +16,9 @@
       <a href="/runs/<%= run._id %>/edit">
         <button type="submit">Edit</button>
       </a>
+      <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
+        <button type="submit">Remove</button>
+      </form>
     </div>
   </section>
 

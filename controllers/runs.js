@@ -91,6 +91,10 @@ function update(req, res) {
   })
 }
 
+function deleteRun(req, res) {
+  console.log('delete is working!');
+}
+
 export {
   index,
   newRun as new,
@@ -99,4 +103,5 @@ export {
   addProfiles,
   edit,
   update,
+  deleteRun as delete,
 }

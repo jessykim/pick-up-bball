@@ -21,6 +21,9 @@ router.post('/', runsCtrl.create)
 // POST /runs/:id/profiles
 router.post('/:id/profiles', runsCtrl.addProfiles)
 
+// DELETE /runs/:_id
+router.delete('/:id', runsCtrl.delete)
+
 // PUT /runs/:id
 router.put('/:id', runsCtrl.update)
 
