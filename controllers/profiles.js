@@ -13,6 +13,11 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  console.log('show is working!')
+}
+
 export {
   index,
+  show,
 }
