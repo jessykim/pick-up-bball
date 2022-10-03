@@ -12,20 +12,23 @@
         <button type="submit">Add</button>
       </label>
     </form>
-  </div>
-  <div>
-    <h2>Stats</h2>
-    <label>
-      <input type="text" name="stats">
-      <button type="submit">Add</button>
-    </label>
+    <% profile.notes.forEach(function(note) { %>
+      <%= note.createdAt.toLocaleDateString() %>
+      <%= note.notes %> 
+    <% }) %>
   </div>
   <div>
     <h2>Goals</h2>
-    <label>
-      <input type="text" name="Goals">
-      <button type="submit">Add</button>
-    </label>
+    <form action="/profiles/<%= profile._id %>/goals" method="POST">
+      <label>
+        <input type="text" name="goals">
+        <button type="submit">Add</button>
+      </label>
+    </form>
+    <% profile.goals.forEach(function(goal) { %>
+      <%= goal.createdAt.toLocaleDateString() %>
+      <%= goal.goals %> 
+    <% }) %>
   </div>
 </main>
 

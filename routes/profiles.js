@@ -19,6 +19,9 @@ router.get('/:id/notes', isLoggedIn, profilesCtrl.notesIndex)
 // POST /profiles/:id/notes
 router.post('/:id/notes', isLoggedIn, profilesCtrl.createNote)
 
+// POST /profiles/:id/goals
+router.post('/:id/goals', isLoggedIn, profilesCtrl.createGoal)
+
 // PUT /profiles/:id
 router.put('/:id', profilesCtrl.update)
 

@@ -3,9 +3,14 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const noteSchema = new Schema({
-  notes: String,
-  stats: String,
-  goals: String,
+  note: String,
+}, {
+  timestamps: true
+})
+
+const goalSchema = new Schema({
+  goal: String,
+  achieved: Boolean
 }, {
   timestamps: true
 })
@@ -21,7 +26,8 @@ const profileSchema = new Schema({
     type: String,
     enum: ["Amateur", "Competitive", "Elite"]
   },
-  notes: [noteSchema]
+  notes: [noteSchema],
+  goals: [goalSchema]
 }, {
   timestamps: true
 })

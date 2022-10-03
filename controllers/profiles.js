@@ -70,7 +70,21 @@ function notesIndex(req, res) {
 }
 
 function createNote(req, res) {
-  console.log('creating a note is working!')
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile.notes.push(req.body)
+    profile.save()
+    .then(() => {
+      res.render('profiles/notes/index', {
+        title: 'Personal Notes',
+        profile
+      })
+    })
+  })
+}
+
+function createGoal(req, res) {
+  console.log('goal creating works!');
 }
 
 export {
@@ -80,4 +94,5 @@ export {
   update,
   notesIndex,
   createNote,
+  createGoal,
 }
