@@ -56,7 +56,16 @@ function update(req, res) {
 }
 
 function notesIndex(req, res) {
-  console.log('notes index!');
+  Profile.findById(req.params.id)
+  .then(profile => {
+    res.render('notes/index', {
+      title: 'Personal Notes'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
 }
 
 export {
