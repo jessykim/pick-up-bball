@@ -76,8 +76,30 @@ function createNote(req, res) {
     profile.save()
     .then(() => {
       res.render('profiles/notes/index', {
-        title: 'Personal Notes',
+        title: 'Notes',
         profile,
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/profiles')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
+
+function deleteNote(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    profile.notes.remove({_id: req.params.noteId})
+    profile.save()
+    .then(() => {
+      res.render('profiles/notes/index', {
+        title: 'Notes',
+        profile
       })
     })
     .catch(err => {
@@ -105,9 +127,6 @@ function goalsIndex(req, res) {
   })
 }
 
-function deleteNote(req, res) {
-  console.log('deleting note works!');
-}
 
 function createGoal(req, res) {
   Profile.findById(req.params.id)
