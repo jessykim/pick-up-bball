@@ -26,11 +26,16 @@ function show(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/profiles')
   })
+}
+
+function details(req, res) {
+
 }
 
 export {
   index,
   show,
+  details,
 }

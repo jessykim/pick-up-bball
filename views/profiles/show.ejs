@@ -13,6 +13,15 @@
     <h2>Position:<%= profile.position %></h2>
     <h2>Level:<%= profile.level %></h2>
   </div>
+  <% if (isSelf) { %>
+    <a href="/profiles/<%= profile._id %>/edit">
+      <button type="submit">Edit</button>
+    </a>
+    <a href="/profiles/<%= profile._id %>/notes">
+      <button type="submit">Notes</button>
+    </a>
+    <button type="submit">Remove</button>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>
