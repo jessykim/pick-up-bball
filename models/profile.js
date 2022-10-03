@@ -15,9 +15,12 @@ const profileSchema = new Schema({
   avatar: String,
   position: {
     type: String, 
-    enum: ["no preference", "center", "power forward", "small forward", "point guard", "shooting guard"]
+    enum: ["No preference", "Center", "Power forward", "Small forward", "Point guard", "Shooting guard"]
   },
-  level: String,
+  level: {
+    type: String,
+    enum: ["Amateur", "Competitive", "Elite"]
+  },
   notes: [notesSchema]
 }, {
   timestamps: true

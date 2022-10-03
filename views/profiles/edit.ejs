@@ -7,18 +7,18 @@
   <form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
     <label>Position:</label>
     <select name="position">
-      <option value="no preference">No Preference</option>
-      <option value="center">Center</option>
-      <option value="power forward">Power Forward</option>
-      <option value="small forward">Small Forward</option>
-      <option value="point guard">Point Guard</option>
-      <option value="shooting guard">Shooting Guard</option>
+      <option value="No preference">No preference</option>
+      <option value="Center">Center</option>
+      <option value="Power forward">Power forward</option>
+      <option value="Small forward">Small forward</option>
+      <option value="Point guard">Point guard</option>
+      <option value="Shooting guard">Shooting guard</option>
     </select>
     <label>Level:</label>
     <select name="level">
-      <option value="amateur">Amateur</option>
-      <option value="competitive">Competitive</option>
-      <option value="elite">Elite</option>
+      <option value="Amateur">Amateur</option>
+      <option value="Competitive">Competitive</option>
+      <option value="Elite">Elite</option>
     </select>
     <a href="/profiles/<%= profile._id %>">
       <button type="submit">Save</button>
