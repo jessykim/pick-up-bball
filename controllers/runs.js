@@ -67,7 +67,17 @@ function addProfiles(req, res) {
 }
 
 function edit(req, res) {
-  console.log('edit run is working!')
+  Run.findById(req.params.id)
+  .then(run => {
+    res.render('runs/edit', {
+      title: 'Edit Run',
+      run
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/runs')
+  })
 }
 
 export {
