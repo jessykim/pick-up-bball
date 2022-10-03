@@ -15,6 +15,9 @@ router.get('/:id', runsCtrl.show)
 // POST /runs
 router.post('/', runsCtrl.create)
 
+// POST /runs/:id/profiles
+router.post('/:id/profiles', runsCtrl.addProfiles)
+
 export {
   router
 }

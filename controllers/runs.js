@@ -1,4 +1,5 @@
 import { Run } from '../models/run.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Run.find({})
@@ -33,10 +34,30 @@ function create(req, res) {
 
 function show(req, res) {
   Run.findById(req.params.id)
+  .populate('profiles')
   .then(run => {
-    res.render('runs/show', {
-      title: 'Run Info',
-      run
+    Profile.find({_id: {$nin: run.profiles}})
+    .then(profiles => {
+      res.render('runs/show', {
+        title: 'Run Info',
+        run,
+        profiles
+      })
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/runs')
+  })
+}
+
+function addProfiles(req, res) {
+  Run.findById(req.params.id)
+  .then(run => {
+    run.profiles.push(req.body.profileId)
+    run.save()
+    .then(() => {
+      res.redirect(`/runs/${run._id}`)
     })
   })
   .catch(err => {
@@ -49,5 +70,6 @@ export {
   index,
   newRun as new,
   create,
-  show
+  show,
+  addProfiles,
 }
