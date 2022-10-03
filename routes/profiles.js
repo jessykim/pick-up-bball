@@ -10,8 +10,8 @@ router.get('/', profilesCtrl.index)
 // GET /profiles/:id
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
-// POST /profiles/:id/details
-router.post('/:id/details', isLoggedIn, profilesCtrl.details)
+// GET /profiles/:id/edit
+router.get('/:id/edit', isLoggedIn, profilesCtrl.edit)
 
 export {
   router

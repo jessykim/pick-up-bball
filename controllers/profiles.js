@@ -30,12 +30,12 @@ function show(req, res) {
   })
 }
 
-function details(req, res) {
-
+function edit(req, res) {
+  console.log('edit is working!')
 }
 
 export {
   index,
   show,
-  details,
+  edit,
 }
