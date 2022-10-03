@@ -127,7 +127,6 @@ function goalsIndex(req, res) {
   })
 }
 
-
 function createGoal(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
@@ -150,6 +149,28 @@ function createGoal(req, res) {
   })
 }
 
+function deleteGoal(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    profile.goals.remove({_id: req.params.goalId})
+    profile.save()
+    .then(() => {
+      res.render('profiles/goals/index', {
+        title: 'Goals',
+        profile
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/profiles')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
+
 export {
   index,
   show,
@@ -159,5 +180,6 @@ export {
   createNote,
   goalsIndex,
   createGoal,
-  deleteNote
+  deleteNote,
+  deleteGoal,
 }

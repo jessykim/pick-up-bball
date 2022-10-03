@@ -15,6 +15,9 @@
     <% profile.goals.forEach(function(goal) { %>
       <%= goal.createdAt.toLocaleDateString() %>
       <%= goal.goal %> 
+      <form action="/profiles/<%= profile._id %>/goals/<%= goal._id %>?_method=DELETE" method="POST">
+        <button>X</button>
+      </form>
     <% }) %>
   </div>
 </main>
