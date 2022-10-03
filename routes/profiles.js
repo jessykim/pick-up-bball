@@ -13,6 +13,9 @@ router.get('/:id', isLoggedIn, profilesCtrl.show)
 // GET /profiles/:id/edit
 router.get('/:id/edit', isLoggedIn, profilesCtrl.edit)
 
+// PUT /profiles/:id
+router.put('/:id', profilesCtrl.update)
+
 export {
   router
 }

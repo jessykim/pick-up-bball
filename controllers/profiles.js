@@ -31,11 +31,26 @@ function show(req, res) {
 }
 
 function edit(req, res) {
-  console.log('edit is working!')
+  Profile.findById(req.params.id)
+  .then(profile => {
+    res.render('profiles/edit', {
+      profile,
+      title: 'Edit Profile'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
+
+function update(req, res) {
+  console.log('update is working!')
 }
 
 export {
   index,
   show,
   edit,
+  update,
 }
