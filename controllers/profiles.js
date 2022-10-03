@@ -58,8 +58,9 @@ function update(req, res) {
 function notesIndex(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
-    res.render('notes/index', {
-      title: 'Personal Notes'
+    res.render('profiles/notes/index', {
+      title: 'Personal Notes',
+      profile
     })
   })
   .catch(err => {
@@ -68,10 +69,15 @@ function notesIndex(req, res) {
   })
 }
 
+function createNote(req, res) {
+
+}
+
 export {
   index,
   show,
   edit,
   update,
   notesIndex,
+  createNote,
 }

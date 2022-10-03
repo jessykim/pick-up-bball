@@ -1,15 +1,15 @@
-<%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/notes/index.css">
-<%- include('../partials/nav') %>
+
 
 <main>
   <h1><%= title %></h1>
   <div>
     <h2>Notes to Improve</h2>
-    <label>
-      <input type="text" name="notes">
-      <button type="submit">Add</button>
-    </label>
+    <form action="/profiles/<%= profile._id %>/notes" method="POST">
+      <label>
+        <input type="text" name="notes">
+        <button type="submit">Add</button>
+      </label>
+    </form>
   </div>
   <div>
     <h2>Stats</h2>
@@ -26,5 +26,3 @@
     </label>
   </div>
 </main>
-
-<%- include('../partials/footer') %>
