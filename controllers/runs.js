@@ -92,7 +92,14 @@ function update(req, res) {
 }
 
 function deleteRun(req, res) {
-  console.log('delete is working!');
+  Run.findByIdAndDelete(req.params.id)
+  .then(() => {
+    res.redirect('/runs')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/runs')
+  })
 }
 
 export {
