@@ -25,6 +25,9 @@ router.post('/:id/notes', isLoggedIn, profilesCtrl.createNote)
 // POST /profiles/:id/goals
 router.post('/:id/goals', isLoggedIn, profilesCtrl.createGoal)
 
+// DELETE /profiles/:id/notes/:noteId
+router.delete('/:profileId/notes/:noteId', profilesCtrl.deleteNote)
+
 // PUT /profiles/:id
 router.put('/:id', profilesCtrl.update)
 

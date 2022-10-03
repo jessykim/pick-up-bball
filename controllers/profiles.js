@@ -105,6 +105,10 @@ function goalsIndex(req, res) {
   })
 }
 
+function deleteNote(req, res) {
+  console.log('deleting note works!');
+}
+
 function createGoal(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
@@ -136,4 +140,5 @@ export {
   createNote,
   goalsIndex,
   createGoal,
+  deleteNote
 }

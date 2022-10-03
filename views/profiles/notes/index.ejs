@@ -15,6 +15,9 @@
     <% profile.notes.forEach(function(note) { %>
       <%= note.createdAt.toLocaleDateString() %>
       <%= note.note %> 
+      <form action="/profiles/<%= profile._id %>/notes/<%= note._id %>?_method=DELETE" method="POST">
+        <button>X</button>
+      </form>
     <% }) %>
   </div>
 </main>
