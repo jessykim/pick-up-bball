@@ -59,7 +59,7 @@ function notesIndex(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
     res.render('profiles/notes/index', {
-      title: 'Personal Notes',
+      title: 'Notes',
       profile
     })
   })
@@ -77,14 +77,54 @@ function createNote(req, res) {
     .then(() => {
       res.render('profiles/notes/index', {
         title: 'Personal Notes',
-        profile
+        profile,
       })
     })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/profiles')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
+
+function goalsIndex(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    res.render('profiles/goals/index', {
+      title: 'Goals',
+      profile
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
   })
 }
 
 function createGoal(req, res) {
-  console.log('goal creating works!');
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile.goals.push(req.body)
+    profile.save()
+    .then(() => {
+      res.render('profiles/goals/index', {
+        title: 'Goals',
+        profile,
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/profiles')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
 }
 
 export {
@@ -94,5 +134,6 @@ export {
   update,
   notesIndex,
   createNote,
+  goalsIndex,
   createGoal,
 }

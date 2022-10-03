@@ -8,26 +8,13 @@
     <h2>Notes to Improve</h2>
     <form action="/profiles/<%= profile._id %>/notes" method="POST">
       <label>
-        <input type="text" name="notes">
+        <input type="text" name="note">
         <button type="submit">Add</button>
       </label>
     </form>
     <% profile.notes.forEach(function(note) { %>
       <%= note.createdAt.toLocaleDateString() %>
-      <%= note.notes %> 
-    <% }) %>
-  </div>
-  <div>
-    <h2>Goals</h2>
-    <form action="/profiles/<%= profile._id %>/goals" method="POST">
-      <label>
-        <input type="text" name="goals">
-        <button type="submit">Add</button>
-      </label>
-    </form>
-    <% profile.goals.forEach(function(goal) { %>
-      <%= goal.createdAt.toLocaleDateString() %>
-      <%= goal.goals %> 
+      <%= note.note %> 
     <% }) %>
   </div>
 </main>

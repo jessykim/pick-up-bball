@@ -1,0 +1,22 @@
+<%- include('../../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/goals/index.css">
+<%- include('../../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <div>
+    <h2>Goals</h2>
+    <form action="/profiles/<%= profile._id %>/goals" method="POST">
+      <label>
+        <input type="text" name="goal">
+        <button type="submit">Add</button>
+      </label>
+    </form>
+    <% profile.goals.forEach(function(goal) { %>
+      <%= goal.createdAt.toLocaleDateString() %>
+      <%= goal.goal %> 
+    <% }) %>
+  </div>
+</main>
+
+<%- include('../../partials/footer') %>
