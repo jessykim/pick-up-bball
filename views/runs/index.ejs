@@ -1,1 +1,18 @@
-<h1><%= title %></h1>
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/runs/index.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+
+  <div>
+    <% runs.forEach(run => { %>
+      <%= run.date %>
+      <%= run.time %>
+      <a href="/runs/<%= run._id %>">details</a>
+    <% }) %> 
+  </div>
+
+</main>
+
+<%- include('../partials/footer') %>

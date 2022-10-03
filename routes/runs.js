@@ -9,6 +9,9 @@ router.get('/', runsCtrl.index)
 // GET /runs/new
 router.get('/new', runsCtrl.new)
 
+// GET /runs/:id
+router.get('/:id', runsCtrl.show)
+
 // POST /runs
 router.post('/', runsCtrl.create)
 
