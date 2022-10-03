@@ -70,7 +70,7 @@ function notesIndex(req, res) {
 }
 
 function createNote(req, res) {
-
+  console.log('creating a note is working!')
 }
 
 export {
