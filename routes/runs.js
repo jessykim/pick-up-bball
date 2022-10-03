@@ -12,6 +12,9 @@ router.get('/new', runsCtrl.new)
 // GET /runs/:id
 router.get('/:id', runsCtrl.show)
 
+// GET /runs/:id/edit
+router.get('/:id/edit', runsCtrl.edit)
+
 // POST /runs
 router.post('/', runsCtrl.create)
 

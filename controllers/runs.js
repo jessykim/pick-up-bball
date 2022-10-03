@@ -66,10 +66,15 @@ function addProfiles(req, res) {
   })
 }
 
+function edit(req, res) {
+  console.log('edit run is working!')
+}
+
 export {
   index,
   newRun as new,
   create,
   show,
   addProfiles,
+  edit,
 }
