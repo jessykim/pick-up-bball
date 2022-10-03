@@ -55,9 +55,14 @@ function update(req, res) {
   })
 }
 
+function notesIndex(req, res) {
+  console.log('notes index!');
+}
+
 export {
   index,
   show,
   edit,
   update,
+  notesIndex,
 }
