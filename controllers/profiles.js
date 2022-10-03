@@ -7,14 +7,27 @@ function index(req, res) {
       title: 'Welcome to the Team',
       profiles
     })
-  }).catch(err => {
+  })
+  .catch(err => {
     console.log(err)
     res.redirect('/')
   })
 }
 
 function show(req, res) {
-  console.log('show is working!')
+  Profile.findById(req.params.id)
+  .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
+    res.render('profiles/show', {
+      title: `${profile.name}`,
+      profile,
+      isSelf
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 export {
