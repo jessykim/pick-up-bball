@@ -21,6 +21,9 @@ router.post('/', runsCtrl.create)
 // POST /runs/:id/profiles
 router.post('/:id/profiles', runsCtrl.addProfiles)
 
+// PUT /runs/:id
+router.put('/:id', runsCtrl.update)
+
 export {
   router
 }

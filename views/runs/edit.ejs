@@ -4,7 +4,7 @@
 
 <main>
   <h1><%= title %></h1>
-  <form id="new-run-form" action="/runs" method="POST">
+  <form id="edit-run-form" action="/runs/<%= run._id %>?_method=PUT" method="POST">
     <label>
       Date:
       <input type="date" name="date" value="<%= run.date %>">
@@ -31,7 +31,6 @@
     </label>
     <button type="submit">Save</button>
   </form>
-
 </main>
 
 <%- include('../partials/footer') %>

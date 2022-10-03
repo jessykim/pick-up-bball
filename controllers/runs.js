@@ -80,6 +80,17 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Run.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(run => {
+    res.redirect(`/runs/${run._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/runs')
+  })
+}
+
 export {
   index,
   newRun as new,
@@ -87,4 +98,5 @@ export {
   show,
   addProfiles,
   edit,
+  update,
 }
