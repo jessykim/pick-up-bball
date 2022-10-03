@@ -12,6 +12,11 @@
         <button type="submit">Add</button>
       </label>
     </form>
+    <div>
+      <a href="/profiles/<%= profile._id %>">
+        <button type="submit">Back to Profile</button>
+      </a>
+    </div>
     <% profile.notes.forEach(function(note) { %>
       <%= note.createdAt.toLocaleDateString() %>
       <%= note.note %> 
