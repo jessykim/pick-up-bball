@@ -25,8 +25,8 @@ router.post('/:id/profiles', isLoggedIn, runsCtrl.addProfiles)
 // DELETE /runs/:_id
 router.delete('/:id', isLoggedIn, runsCtrl.delete)
 
-// DELETE /runs/:id/profiles
-router.delete('/:id/profiles', isLoggedIn, runsCtrl.deleteProfile)
+// DELETE /runs/:id/profiles/:profileId
+router.delete('/:runId/profiles/:profileId', isLoggedIn, runsCtrl.deleteProfile)
 
 // PUT /runs/:id
 router.put('/:id', isLoggedIn, runsCtrl.update)

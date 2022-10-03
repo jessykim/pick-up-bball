@@ -103,7 +103,14 @@ function deleteRun(req, res) {
 }
 
 function deleteProfile(req, res) {
-  console.log('deleting profile');
+  Run.findById(req.params.runId)
+  .then(run => {
+    run.profiles.remove({_id: req.params.profileId})
+    run.save()
+    .then(() => {
+      res.redirect(`/runs/${run._id}`)
+    })
+  })
 }
 
 export {
