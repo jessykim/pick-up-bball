@@ -26,6 +26,9 @@
       </select>
       <button type="submit">put me in coach</button>
     </form>
+    <% run.profiles.forEach(profile => { %>
+      <%= profile.name %> 
+    <% }) %>
   </section>
 
 </main>
