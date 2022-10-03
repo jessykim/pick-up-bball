@@ -32,7 +32,17 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  console.log('show function working!');
+  Run.findById(req.params.id)
+  .then(run => {
+    res.render('runs/show', {
+      title: 'Run Info',
+      run
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/runs')
+  })
 }
 
 export {

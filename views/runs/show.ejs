@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/runs/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+
+  <h1><%= title %></h1>
+  <section>
+    <div>
+      <p>Date: <%= run.date %></p>
+      <p>Time: <%= run.time %></p>
+      <p>Location: <%= run.location %></p>
+      <p>Host: <%= run.host %></p>
+      <p>Note: <%= run.note %></p>
+    </div>
+  </section>
+
+</main>
+
+<%- include('../partials/footer') %>
