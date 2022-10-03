@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import { isLoggedIn } from '../middleware/middleware.js'
 import * as runsCtrl from '../controllers/runs.js'
 
 const router = Router()
@@ -7,25 +8,28 @@ const router = Router()
 router.get('/', runsCtrl.index)
 
 // GET /runs/new
-router.get('/new', runsCtrl.new)
+router.get('/new', isLoggedIn, runsCtrl.new)
 
 // GET /runs/:id
-router.get('/:id', runsCtrl.show)
+router.get('/:id', isLoggedIn, runsCtrl.show)
 
 // GET /runs/:id/edit
-router.get('/:id/edit', runsCtrl.edit)
+router.get('/:id/edit', isLoggedIn, runsCtrl.edit)
 
 // POST /runs
-router.post('/', runsCtrl.create)
+router.post('/', isLoggedIn, runsCtrl.create)
 
 // POST /runs/:id/profiles
-router.post('/:id/profiles', runsCtrl.addProfiles)
+router.post('/:id/profiles', isLoggedIn, runsCtrl.addProfiles)
 
 // DELETE /runs/:_id
-router.delete('/:id', runsCtrl.delete)
+router.delete('/:id', isLoggedIn, runsCtrl.delete)
+
+// DELETE /runs/:id/profiles
+router.delete('/:id/profiles', isLoggedIn, runsCtrl.deleteProfile)
 
 // PUT /runs/:id
-router.put('/:id', runsCtrl.update)
+router.put('/:id', isLoggedIn, runsCtrl.update)
 
 export {
   router

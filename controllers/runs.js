@@ -102,6 +102,10 @@ function deleteRun(req, res) {
   })
 }
 
+function deleteProfile(req, res) {
+  console.log('deleting profile');
+}
+
 export {
   index,
   newRun as new,
@@ -111,4 +115,5 @@ export {
   edit,
   update,
   deleteRun as delete,
+  deleteProfile,
 }
