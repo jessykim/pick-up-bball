@@ -4,7 +4,8 @@ const Schema = mongoose.Schema
 
 const runSchema = new Schema({
   date: String,
-  time: String,
+  starttime: String,
+  endtime: String,
   location: String,
   host: String,
   note: String,
