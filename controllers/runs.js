@@ -4,9 +4,22 @@ import { Profile } from '../models/profile.js'
 function index(req, res) {
   Run.find({})
   .then(runs => {
+    console.log(runs, 'run')
+    const updatedRuns = runs.map(run => {
+      console.log('date', run.date)
+      const dateNum = run.date
+      const [year, month, day] = dateNum.split('-')
+      const updatedDate = new Date(year, month - 1, day).toDateString()
+      return {
+        _id: run._id,
+        starttime: run.starttime,
+        date: updatedDate,
+      }
+    })
+    console.log(updatedRuns, 'updated runs')
     res.render('runs/index', {
       title: 'All Runs',
-      runs,
+      runs: updatedRuns
     })
   })
   .catch(err => {
