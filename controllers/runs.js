@@ -4,9 +4,9 @@ import { Profile } from '../models/profile.js'
 function index(req, res) {
   Run.find({})
   .then(runs => {
-    console.log(runs, 'run')
+    // console.log(runs, 'run')
     const updatedRuns = runs.map(run => {
-      console.log('date', run.date)
+      // console.log('date', run.date)
       const dateNum = run.date
       const [year, month, day] = dateNum.split('-')
       const updatedDate = new Date(year, month - 1, day).toDateString().slice(0, -5)
@@ -66,11 +66,22 @@ function show(req, res) {
 function addProfile(req, res) {
   Run.findById(req.params.id)
   .then(run => {
-    run.profiles.push(req.user.profile._id)
-    run.save()
-    .then(() => {
+    console.log(run.profiles)
+    let runPros = run.profiles
+    const userPro = req.user.profile._id
+    if (!runPros.includes(userPro)) {
+      run.profiles.push(req.user.profile._id)
+      run.save()
+      .then(() => {
+        res.redirect(`/runs/${run._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/runs')
+      })
+    } else {
       res.redirect(`/runs/${run._id}`)
-    })
+    }
   })
   .catch(err => {
     console.log(err)
