@@ -6,31 +6,33 @@
   <h1><%= title %></h1>
 
   <form id="new-run-form" action="/runs" method="POST">
-    <label>
-      Date:
+    <div>
+      <label>Date:</label>
       <input type="date" name="date">
-    </label>
-    <label>
-      Start Time:
-      <input type="time" name="starttime">
-    </label>
-    <label>
-      End Time:
-      <input type="time" name="endtime">
-    </label>
-    <label>
-      Location:
+    </div>
+    <div>
+      <label>Start Time:</label>
+      <input type="text" name="starttime">
+    </div>
+    <div>
+      <label>End Time:</label>
+      <input type="text" name="endtime">
+    </div>
+    <div>
+      <label>Location:</label>
       <input type="text" name="location">
-    </label>
-    <label>
-      Host:
+    </div>
+    <div>
+      <label>Host:</label>
       <input type="text" name="host">
-    </label>
-    <label>
-      Note:
+    </div>
+    <div>
+      <label>Note:</label>
       <input type="text" name="note">
-    </label>
-    <button type="submit">Add Run</button>
+    </div>
+    <div>
+      <button type="submit">Add Run</button>
+    </div>
   </form>
 
 </main>

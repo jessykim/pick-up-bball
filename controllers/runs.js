@@ -48,7 +48,7 @@ function show(req, res) {
   Run.findById(req.params.id)
   .populate('profiles')
   .then(run => {
-    Profile.find({_id: {$nin: run.profiles}})
+    Profile.find({})
     .then(profiles => {
       res.render('runs/show', {
         title: 'Run Info',
@@ -66,8 +66,7 @@ function show(req, res) {
 function addProfile(req, res) {
   Run.findById(req.params.id)
   .then(run => {
-    console.log(run.profiles)
-    let runPros = run.profiles
+    const runPros = run.profiles
     const userPro = req.user.profile._id
     if (!runPros.includes(userPro)) {
       run.profiles.push(req.user.profile._id)

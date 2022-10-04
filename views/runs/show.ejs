@@ -38,9 +38,34 @@
         </a>
       <% } %> 
     </form>
-    <% run.profiles.forEach(profile => { %>
-      <%= profile.name %>
-    <% }) %>
+    <% if (run.profiles.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Position</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% run.profiles.forEach(profile => { %>
+            <tr>
+              <td>
+                <%= profile.name %>
+              </td>
+              <td>
+                <%= profile.position %> 
+              </td>
+              <td>
+                <%= profile.level %> 
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h3>No Players</h3>
+    <% } %>
   </section>
 
 </main>
