@@ -12,11 +12,19 @@
     </div>
     <div>
       <label>Start Time:</label>
-      <input type="text" name="starttime">
+      <input type="number" name="hour" min="1" max="12">:<input type="number" name="minutes" min="0" max="59">
+      <select name="ampm">
+        <option value="am">AM</option>
+        <option value="pm">PM</option>
+      </select>
     </div>
     <div>
       <label>End Time:</label>
-      <input type="text" name="endtime">
+      <input type="number" name="hour" min="1" max="12">:<input type="number" name="minutes" min="0" max="59">
+      <select name="ampm">
+        <option value="am">AM</option>
+        <option value="pm">PM</option>
+      </select>
     </div>
     <div>
       <label>Location:</label>
