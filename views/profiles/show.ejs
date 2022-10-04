@@ -26,6 +26,11 @@
     <a href="/profiles">
       <button type="submit">Back to Profiles</button>
     </a>
+    <form action="/profiles/<%= profile._id %>/?_method=DELETE" method="POST">
+      <a href="/">
+        <button type="submit">Delete Profile</button>
+      </a>
+    </form>
   <% } %>
 </main>
 

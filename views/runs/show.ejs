@@ -8,8 +8,8 @@
   <section>
     <div>
       <p>Date: <%= run.date %></p>
-      <p>Start Time: <%= run.starttime %></p>
-      <p>End Time: <%= run.endtime %></p>
+      <p>Start Time: <%= run.starttime.hour %>:<%= run.starttime.minutes %><%= run.starttime.ampm %></p>
+      <p>End Time: <%= run.endtime.hour %>:<%= run.endtime.minutes %><%= run.endtime.ampm %></p>
       <p>Location: <%= run.location %></p>
       <p>Host: <%= run.host %></p>
       <p>Note: <%= run.note %></p>

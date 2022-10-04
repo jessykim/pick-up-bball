@@ -48,6 +48,7 @@ function show(req, res) {
   Run.findById(req.params.id)
   .populate('profiles')
   .then(run => {
+    // console.log(run.date.slice(5))
     Profile.find({})
     .then(profiles => {
       res.render('runs/show', {
