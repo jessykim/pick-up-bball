@@ -23,20 +23,23 @@
   </section>
 
   <section>
-    <h2>Sign Up</h2>
+    <h2>Players</h2>
     <form action="/runs/<%= run._id %>/profiles" method="POST">
-      <select name="profileId" id="profile-list">
-        <% profiles.forEach(profile => { %>
-          <option value="<%= profile._id %>"><%= profile.name %></option>
-        <% }) %>
-      </select>
-      <button type="submit">put me in coach</button>
+      <% if (user) { %>
+        <a href="/runs/<%= run._id %>">
+          <button type="submit">Add Me</button>
+        </a>
+      <% } %> 
+    </form>
+    <form action="/runs/<%= run._id %>/profiles/?_method=DELETE" method="POST">
+      <% if (user) { %>
+        <a href="/runs/<%= run._id %>">
+          <button type="submit">Remove Me</button>
+        </a>
+      <% } %> 
     </form>
     <% run.profiles.forEach(profile => { %>
-      <%= profile.name %> 
-      <form action="/runs/<%= run._id %>/profiles/<%= profile._id %>?_method=DELETE" method="POST">
-        <button type="submit">X</button>
-      </form>
+      <%= profile.name %>
     <% }) %>
   </section>
 

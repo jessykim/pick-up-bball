@@ -9,14 +9,13 @@ function index(req, res) {
       console.log('date', run.date)
       const dateNum = run.date
       const [year, month, day] = dateNum.split('-')
-      const updatedDate = new Date(year, month - 1, day).toDateString()
+      const updatedDate = new Date(year, month - 1, day).toDateString().slice(0, -5)
       return {
         _id: run._id,
         starttime: run.starttime,
         date: updatedDate,
       }
     })
-    console.log(updatedRuns, 'updated runs')
     res.render('runs/index', {
       title: 'All Runs',
       runs: updatedRuns
@@ -64,10 +63,10 @@ function show(req, res) {
   })
 }
 
-function addProfiles(req, res) {
+function addProfile(req, res) {
   Run.findById(req.params.id)
   .then(run => {
-    run.profiles.push(req.body.profileId)
+    run.profiles.push(req.user.profile._id)
     run.save()
     .then(() => {
       res.redirect(`/runs/${run._id}`)
@@ -118,7 +117,7 @@ function deleteRun(req, res) {
 function deleteProfile(req, res) {
   Run.findById(req.params.runId)
   .then(run => {
-    run.profiles.remove({_id: req.params.profileId})
+    run.profiles.remove(req.user.profile._id)
     run.save()
     .then(() => {
       res.redirect(`/runs/${run._id}`)
@@ -131,7 +130,7 @@ export {
   newRun as new,
   create,
   show,
-  addProfiles,
+  addProfile,
   edit,
   update,
   deleteRun as delete,

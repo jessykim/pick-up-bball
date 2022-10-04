@@ -20,13 +20,13 @@ router.get('/:id/edit', isLoggedIn, runsCtrl.edit)
 router.post('/', isLoggedIn, runsCtrl.create)
 
 // POST /runs/:id/profiles
-router.post('/:id/profiles', isLoggedIn, runsCtrl.addProfiles)
+router.post('/:id/profiles', isLoggedIn, runsCtrl.addProfile)
 
 // DELETE /runs/:_id
 router.delete('/:id', isLoggedIn, runsCtrl.delete)
 
 // DELETE /runs/:id/profiles/:profileId
-router.delete('/:runId/profiles/:profileId', isLoggedIn, runsCtrl.deleteProfile)
+router.delete('/:runId/profiles', isLoggedIn, runsCtrl.deleteProfile)
 
 // PUT /runs/:id
 router.put('/:id', isLoggedIn, runsCtrl.update)
