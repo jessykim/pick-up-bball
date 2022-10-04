@@ -55,11 +55,11 @@ function update(req, res) {
   })
 }
 
-function notesIndex(req, res) {
+function statsIndex(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
-    res.render('profiles/notes/index', {
-      title: 'Notes',
+    res.render('profiles/stats/index', {
+      title: 'Game Stats',
       profile
     })
   })
@@ -69,14 +69,14 @@ function notesIndex(req, res) {
   })
 }
 
-function createNote(req, res) {
+function createStat(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
-    profile.notes.push(req.body)
+    profile.stats.push(req.body)
     profile.save()
     .then(() => {
-      res.render('profiles/notes/index', {
-        title: 'Notes',
+      res.render('profiles/stats/index', {
+        title: 'Game Stats',
         profile,
       })
     })
@@ -91,14 +91,14 @@ function createNote(req, res) {
   })
 }
 
-function deleteNote(req, res) {
+function deleteStat(req, res) {
   Profile.findById(req.params.profileId)
   .then(profile => {
-    profile.notes.remove({_id: req.params.noteId})
+    profile.stats.remove({_id: req.params.statId})
     profile.save()
     .then(() => {
-      res.render('profiles/notes/index', {
-        title: 'Notes',
+      res.render('profiles/stats/index', {
+        title: 'Game Stats',
         profile
       })
     })
@@ -176,10 +176,10 @@ export {
   show,
   edit,
   update,
-  notesIndex,
-  createNote,
+  statsIndex,
+  createStat,
   goalsIndex,
   createGoal,
-  deleteNote,
+  deleteStat,
   deleteGoal,
 }
