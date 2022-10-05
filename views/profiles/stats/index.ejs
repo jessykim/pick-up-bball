@@ -49,6 +49,7 @@
         </div>
       </form>
   <% } %> 
+  <% if (profile.stats.length) { %>
     <% profile.stats.forEach(function(stat) { %>
       <div>
         <% if (stat.points > 0) { %>
@@ -101,6 +102,9 @@
         </div>
       <% } %> 
     <% }) %>
+  <% } else { %>
+    <h3>NO STATS RECORDED</h3>
+  <% } %> 
   </div>
 </main>
 
