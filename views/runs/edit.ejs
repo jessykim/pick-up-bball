@@ -5,18 +5,30 @@
 <main>
   <h1><%= title %></h1>
   <form id="edit-run-form" action="/runs/<%= run._id %>?_method=PUT" method="POST">
-    <label>
-      Date:
-      <input type="date" name="date" value="<%= run.date %>">
-    </label>
-    <label>
-      Start Time:
-      <input type="time" name="starttime" value="<%= run.starttime %>">
-    </label>
-    <label>
-      End Time:
-      <input type="time" name="endtime" value="<%= run.endtime %>">
-    </label>
+    <label>Date:</label>
+    <input type="date" name="date" value="<%= run.date %>">
+    <label>Start Time:</label>
+    <select name="starttime">
+      <option value="5:00 PM" <%= run.starttime === '5:00 PM' ? 'selected' : '' %>>5:00 PM</option>
+      <option value="6:00 PM" <%= run.starttime === '6:00 PM' ? 'selected' : '' %>>6:00 PM</option>
+      <option value="7:00 PM" <%= run.starttime === '7:00 PM' ? 'selected' : '' %>>7:00 PM</option>
+      <option value="8:00 PM" <%= run.starttime === '8:00 PM' ? 'selected' : '' %>>8:00 PM</option>
+      <option value="9:00 PM" <%= run.starttime === '9:00 PM' ? 'selected' : '' %>>9:00 PM</option>
+      <option value="10:00 PM" <%= run.starttime === '10:00 PM' ? 'selected' : '' %>>10:00 PM</option>
+      <option value="11:00 PM" <%= run.starttime === '11:00 PM' ? 'selected' : '' %>>11:00 PM</option>
+      <option value="12:00 AM" <%= run.starttime === '12:00 AM' ? 'selected' : '' %>>12:00 AM</option>
+    </select>
+    <label>End Time:</label>
+    <select name="endtime">
+      <option value="5:00 PM" <%= run.endtime === '5:00 PM' ? 'selected' : '' %>>5:00 PM</option>
+      <option value="6:00 PM" <%= run.endtime === '6:00 PM' ? 'selected' : '' %>>6:00 PM</option>
+      <option value="7:00 PM" <%= run.endtime === '7:00 PM' ? 'selected' : '' %>>7:00 PM</option>
+      <option value="8:00 PM" <%= run.endtime === '8:00 PM' ? 'selected' : '' %>>8:00 PM</option>
+      <option value="9:00 PM" <%= run.endtime === '9:00 PM' ? 'selected' : '' %>>9:00 PM</option>
+      <option value="10:00 PM" <%= run.endtime === '10:00 PM' ? 'selected' : '' %>>10:00 PM</option>
+      <option value="11:00 PM" <%= run.endtime === '11:00 PM' ? 'selected' : '' %>>11:00 PM</option>
+      <option value="12:00 AM" <%= run.endtime === '12:00 AM' ? 'selected' : '' %>>12:00 AM</option>
+    </select>
     <label>
       Location:
       <input type="text" name="location" value="<%= run.location %>">

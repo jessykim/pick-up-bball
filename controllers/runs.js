@@ -46,7 +46,6 @@ function show(req, res) {
   Run.findById(req.params.id)
   .populate('profiles')
   .then(run => {
-    console.log(run.starttime)
     Profile.find({})
     .then(profiles => {
       res.render('runs/show', {
