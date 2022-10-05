@@ -4,80 +4,100 @@
 
 <main>
   <h1><%= title %></h1>
-  <div>
-    <form action="/profiles/<%= profile._id %>/stats" method="POST">
-      <div>
-        <label>Points: </label>
-        <input type="number" name="points">
-      </div>
-      <div>
-        <label>Rebounds: </label>
-        <input type="number" name="rebounds">
-      </div>
-      <div>
-        <label>Assists: </label>
-        <input type="number" name="assists">
-      </div>
-      <div>
-        <label>Blocks: </label>
-        <input type="number" name="blocks">
-      </div>
-      <div>
-        <label>Steals: </label>
-        <input type="number" name="steals">
-      </div>
-      <div>
-        <label>Turnovers: </label>
-        <input type="number" name="turnovers">
-      </div>
-      <div>
-        <label>Three Pointers: </label>
-        <input type="number" name="threepointers">
-      </div>
-      <div>
-        <label>Free Throws: </label>
-        <input type="number" name="freethrows">
-      </div>
-      <div>
-        <button type="submit">Add</button>
-      </div>
-    </form>
+  <% if (isSelf) { %>
     <div>
-      <a href="/profiles/<%= profile._id %>">
-        <button type="submit">Back to Profile</button>
-      </a>
-    </div>
+      <form action="/profiles/<%= profile._id %>/stats" method="POST">
+        <div>
+          <label>Points: </label>
+          <input type="number" name="points">
+        </div>
+        <div>
+          <label>Rebounds: </label>
+          <input type="number" name="rebounds">
+        </div>
+        <div>
+          <label>Assists: </label>
+          <input type="number" name="assists">
+        </div>
+        <div>
+          <label>Blocks: </label>
+          <input type="number" name="blocks">
+        </div>
+        <div>
+          <label>Steals: </label>
+          <input type="number" name="steals">
+        </div>
+        <div>
+          <label>Turnovers: </label>
+          <input type="number" name="turnovers">
+        </div>
+        <div>
+          <label>Three Pointers: </label>
+          <input type="number" name="threepointers">
+        </div>
+        <div>
+          <label>Free Throws: </label>
+          <input type="number" name="freethrows">
+        </div>
+        <div>
+          <button type="submit">Add</button>
+        </div>
+      </form>
+      <div>
+        <a href="/profiles/<%= profile._id %>">
+          <button type="submit">Back to Profile</button>
+        </a>
+      </div>
+  <% } %> 
     <% profile.stats.forEach(function(stat) { %>
       <%= stat.createdAt.toLocaleDateString() %>
       <div>
-        Points:<%= stat.points %> 
+        <% if (stat.points > 0) { %>
+          Points: <%= stat.points %> 
+        <% } %> 
       </div>
       <div>
-        Rebounds:<%= stat.rebounds %>
+        <% if (stat.rebounds > 0) { %>
+          Rebounds: <%= stat.rebounds %>
+        <% } %> 
       </div>
       <div>
-        Assists:<%= stat.assists %>
+        <% if (stat.assists > 0) { %>
+          Assists: <%= stat.assists %>
+        <% } %> 
       </div>
       <div>
-        Blocks:<%= stat.blocks %>
+        <% if (stat.blocks > 0) { %>
+          Blocks: <%= stat.blocks %>
+        <% } %> 
       </div>
       <div>
-        Steals:<%= stat.steals %>
+        <% if (stat.steals > 0) { %>
+          Steals: <%= stat.steals %>
+        <% } %> 
       </div>
       <div>
-        Turnovers:<%= stat.turnovers %>
+        <% if (stat.turnovers) { %>
+          Turnovers: <%= stat.turnovers %>
+        <% } %> 
       </div>
       <div>
-        Three Pointers:<%= stat.threepointers %>      
+        <% if (stat.threepointers > 0) { %>
+          Three Pointers: <%= stat.threepointers %>      
+        <% } %> 
       </div>
       <div>
-        Free Throws:<%= stat.freethrows %> 
+        <% if (stat.freethrows) { %>
+          Free Throws: <%= stat.freethrows %> 
+        <% } %> 
       </div>
-      <div>
-        <form action="/profiles/<%= profile._id %>/stats/<%= stat._id %>?_method=DELETE" method="POST">
-          <button>X</button>
-        </form>
-      </div>
+      <% if (isSelf) { %>
+        <div>
+          <form action="/profiles/<%= profile._id %>/stats/<%= stat._id %>?_method=DELETE" method="POST">
+            <button>X</button>
+          </form>
+        </div>
+      <% } %> 
     <% }) %>
   </div>
 </main>

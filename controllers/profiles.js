@@ -59,9 +59,11 @@ function update(req, res) {
 function statsIndex(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/stats/index', {
       title: 'Game Stats',
-      profile
+      profile,
+      isSelf
     })
   })
   .catch(err => {
@@ -184,5 +186,4 @@ export {
   createGoal,
   deleteStat,
   deleteGoal,
-
 }
