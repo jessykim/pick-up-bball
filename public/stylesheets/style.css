@@ -26,6 +26,7 @@ nav {
   align-items: center;
   padding: 10px;
   min-height: 60px;
+  justify-content: center;
 }
 
 main {
@@ -33,11 +34,12 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url("/public/images/IMG_0248.PNG");
 }
 
-.right {
-  margin-left: auto;
+a {
+  color: #ECF3F4;
+  padding: 0px 30px;
+  font-size: 20px;
 }
 
 .fa-solid::before {
@@ -46,8 +48,4 @@ main {
 
 .fa-regular::before {
   font-family: "Font Awesome 5 Free";
-}
-
-a {
-  color: #ECF3F4;
 }
