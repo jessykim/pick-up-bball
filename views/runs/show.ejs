@@ -27,20 +27,20 @@
 
   <section>
     <h2>Players</h2>
-    <form action="/runs/<%= run._id %>/profiles" method="POST">
-      <% if (user) { %>
+    <% if (user) { %>
+      <form action="/runs/<%= run._id %>/profiles" method="POST">
         <a href="/runs/<%= run._id %>">
           <button type="submit">Add Me</button>
         </a>
-      <% } %> 
-    </form>
-    <form action="/runs/<%= run._id %>/profiles/?_method=DELETE" method="POST">
-      <% if (user) { %>
+      </form> 
+    <% } %> 
+    <% if (user) { %>
+      <form action="/runs/<%= run._id %>/profiles/?_method=DELETE" method="POST">
         <a href="/runs/<%= run._id %>">
           <button type="submit">Remove Me</button>
         </a>
-      <% } %> 
-    </form>
+      </form>
+    <% } %> 
     <% if (run.profiles.length) { %>
       <table>
         <thead>
@@ -70,7 +70,6 @@
       <h3>NO PLAYERS LISTED</h3>
     <% } %>
   </section>
-
 </main>
 
 <%- include('../partials/footer') %>

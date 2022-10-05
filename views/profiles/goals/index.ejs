@@ -10,18 +10,22 @@
     </a>
   </div>
   <div>
-    <form action="/profiles/<%= profile._id %>/goals" method="POST">
-      <label>
-        <input type="text" name="goal">
-        <button type="submit">Add</button>
-      </label>
-    </form>
+    <% if (isSelf) { %>
+      <form action="/profiles/<%= profile._id %>/goals" method="POST">
+        <label>
+          <input type="text" name="goal">
+          <button type="submit">Add</button>
+        </label>
+      </form>
+    <% } %> 
     <% profile.goals.forEach(function(goal) { %>
       <%= goal.createdAt.toLocaleDateString() %>
       <%= goal.goal %> 
-      <form action="/profiles/<%= profile._id %>/goals/<%= goal._id %>?_method=DELETE" method="POST">
-        <button>X</button>
-      </form>
+      <% if (isSelf) { %>
+        <form action="/profiles/<%= profile._id %>/goals/<%= goal._id %>?_method=DELETE" method="POST">
+          <button>X</button>
+        </form>
+      <% } %> 
     <% }) %>
   </div>
 </main>

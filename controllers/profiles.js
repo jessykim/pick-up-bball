@@ -34,9 +34,11 @@ function show(req, res) {
 function edit(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/edit', {
       profile,
-      title: 'Edit Profile'
+      title: 'Edit Profile',
+      isSelf
     })
   })
   .catch(err => {
@@ -75,12 +77,14 @@ function statsIndex(req, res) {
 function createStat(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
-    profile.stats.push(req.body)
+    const isSelf = profile._id.equals(req.user.profile._id)
+    profile.stats.unshift(req.body)
     profile.save()
     .then(() => {
       res.render('profiles/stats/index', {
         title: 'Game Stats',
         profile,
+        isSelf
       })
     })
     .catch(err => {
@@ -97,12 +101,14 @@ function createStat(req, res) {
 function deleteStat(req, res) {
   Profile.findById(req.params.profileId)
   .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
     profile.stats.remove({_id: req.params.statId})
     profile.save()
     .then(() => {
       res.render('profiles/stats/index', {
         title: 'Game Stats',
-        profile
+        profile,
+        isSelf
       })
     })
     .catch(err => {
@@ -119,9 +125,11 @@ function deleteStat(req, res) {
 function goalsIndex(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/goals/index', {
       title: 'Goals',
-      profile
+      profile,
+      isSelf
     })
   })
   .catch(err => {
@@ -133,12 +141,14 @@ function goalsIndex(req, res) {
 function createGoal(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
-    profile.goals.push(req.body)
+    const isSelf = profile._id.equals(req.user.profile._id)
+    profile.goals.unshift(req.body)
     profile.save()
     .then(() => {
       res.render('profiles/goals/index', {
         title: 'Goals',
         profile,
+        isSelf
       })
     })
     .catch(err => {
@@ -155,12 +165,14 @@ function createGoal(req, res) {
 function deleteGoal(req, res) {
   Profile.findById(req.params.profileId)
   .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
     profile.goals.remove({_id: req.params.goalId})
     profile.save()
     .then(() => {
       res.render('profiles/goals/index', {
         title: 'Goals',
-        profile
+        profile,
+        isSelf
       })
     })
     .catch(err => {
