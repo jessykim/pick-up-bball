@@ -21,8 +21,7 @@ body {
 }
 
 nav {
-  background-color: #f6f6f6;
-  color: #1a1a1a;
+  background-color: rgb(58, 71, 83);
   display: flex;
   align-items: center;
   padding: 10px;
@@ -34,8 +33,21 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-image: url("/public/images/IMG_0248.PNG");
 }
 
 .right {
   margin-left: auto;
+}
+
+.fa-solid::before {
+  font-family: "Font Awesome 5 Free";
+} 
+
+.fa-regular::before {
+  font-family: "Font Awesome 5 Free";
+}
+
+a {
+  color: #ECF3F4;
 }
