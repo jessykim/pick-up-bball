@@ -17,11 +17,11 @@
     <a href="/profiles/<%= profile._id %>/edit">
       <button type="submit">Edit</button>
     </a>
-    <a href="/profiles/<%= profile._id %>/stats">
-      <button type="submit">Stats</button>
-    </a>
     <a href="/profiles/<%= profile._id %>/goals">
       <button type="submit">Goals</button>
+    </a>
+    <a href="/profiles/<%= profile._id %>/stats">
+      <button type="submit">Stats</button>
     </a>
     <a href="/profiles">
       <button type="submit">Back to Profiles</button>
@@ -31,6 +31,13 @@
         <button type="submit">Delete Profile</button>
       </a>
     </form>
+  <% } else { %>
+    <a href="/profiles/<%= profile._id %>/stats">
+      <button type="submit">Stats</button>
+    </a>
+    <a href="/profiles">
+      <button type="submit">Back to Profiles</button>
+    </a>
   <% } %>
 </main>
 
