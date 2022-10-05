@@ -11,14 +11,20 @@
       <p>Start Time: <%= run.starttime %></p>
       <p>End Time: <%= run.endtime %></p>
       <p>Location: <%= run.location %></p>
-      <p>Host: <%= run.host %></p>
+      <p>Host: <%= run.host.name %></p>
       <p>Note: <%= run.note %></p>
-      <a href="/runs/<%= run._id %>/edit">
-        <button type="submit">Edit</button>
-      </a>
-      <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
-        <button type="submit">Remove</button>
-      </form>
+    </div>
+    <div>
+      <% if (run.host.equals(user?.profile._id)) { %>
+        <a href="/runs/<%= run._id %>/edit">
+          <button type="submit">Edit</button>
+        </a>
+        <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
+          <button type="submit">Remove</button>
+        </form>
+      <% } %>
+    </div>
+    <div>
       <a href="/runs">
         <button type="submit">Back to Runs</button>
       </a>

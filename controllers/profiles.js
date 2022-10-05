@@ -1,5 +1,5 @@
 import { Profile } from "../models/profile.js"
-import { User } from "../models/user.js"
+// import { User } from "../models/user.js"
 
 function index(req, res) {
   Profile.find({})
@@ -186,9 +186,16 @@ function deleteGoal(req, res) {
   })
 }
 
-function deleteProfile(req, res) {
-  console.log('deleting profiles!');
-}
+// function deleteProfile(req, res) {
+//   Profile.findById(req.params.id)
+//   .then((profile) => {
+//     console.log(profile.user);
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/')
+//   })
+// }
 
 export {
   index,
@@ -201,5 +208,5 @@ export {
   createGoal,
   deleteStat,
   deleteGoal,
-  deleteProfile
+  // deleteProfile
 }

@@ -13,7 +13,7 @@ const runSchema = new Schema({
     enum: ['5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM', '9:00 PM', '10:00 PM', '11:00 PM', '12:00 AM']
   },
   location: String,
-  host: String,
+  host: { type: Schema.Types.ObjectId, ref: 'Profile'},
   note: String,
   profiles: [{ type: Schema.Types.ObjectId, ref: 'Profile' }]
 }, {

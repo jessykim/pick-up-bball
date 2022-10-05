@@ -32,6 +32,7 @@ function newRun(req, res) {
 }
 
 function create(req, res) {
+  req.body.host = req.user.profile._id
   Run.create(req.body)
   .then(run => {
     res.redirect('/runs')
@@ -45,6 +46,7 @@ function create(req, res) {
 function show(req, res) {
   Run.findById(req.params.id)
   .populate('profiles')
+  .populate('host')
   .then(run => {
     Profile.find({})
     .then(profiles => {

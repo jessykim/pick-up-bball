@@ -34,7 +34,7 @@ const profileSchema = new Schema({
   },
   stats: [statSchema],
   goals: [goalSchema],
-  user: { type: Schema.Types.ObjectId, ref: 'User' },
+  // user: { type: Schema.Types.ObjectId, ref: 'Profile' }
 }, {
   timestamps: true
 })
