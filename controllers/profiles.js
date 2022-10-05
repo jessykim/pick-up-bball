@@ -186,6 +186,9 @@ function deleteGoal(req, res) {
   })
 }
 
+function deleteProfile(req, res) {
+  console.log('deleting profiles!');
+}
 
 export {
   index,
@@ -198,4 +201,5 @@ export {
   createGoal,
   deleteStat,
   deleteGoal,
+  deleteProfile
 }
