@@ -39,7 +39,7 @@
           <button type="submit">Add Me</button>
         </a>
       </form> 
-    <% } %> 
+    <% } %>
     <% if (user) { %>
       <form action="/runs/<%= run._id %>/profiles/?_method=DELETE" method="POST">
         <a href="/runs/<%= run._id %>">

@@ -35,7 +35,7 @@ function create(req, res) {
   req.body.host = req.user.profile._id
   Run.create(req.body)
   .then(run => {
-    res.redirect('/runs')
+    res.redirect(`/runs/${run._id}`)
   })
   .catch(err => {
     console.log(err)
