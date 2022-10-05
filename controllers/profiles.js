@@ -1,4 +1,5 @@
 import { Profile } from "../models/profile.js"
+import { User } from "../models/user.js"
 
 function index(req, res) {
   Profile.find({})
@@ -171,9 +172,6 @@ function deleteGoal(req, res) {
   })
 }
 
-function deleteProfile(req, res) {
-  console.log('deleting profile!')
-}
 
 export {
   index,
@@ -186,5 +184,5 @@ export {
   createGoal,
   deleteStat,
   deleteGoal,
-  deleteProfile
+
 }

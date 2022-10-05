@@ -33,7 +33,8 @@ const profileSchema = new Schema({
     enum: ["Amateur", "Competitive", "Elite"]
   },
   stats: [statSchema],
-  goals: [goalSchema]
+  goals: [goalSchema],
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
 }, {
   timestamps: true
 })

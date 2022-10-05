@@ -4,16 +4,14 @@ import { Profile } from '../models/profile.js'
 function index(req, res) {
   Run.find({})
   .then(runs => {
-    // console.log(runs, 'run')
     const updatedRuns = runs.map(run => {
-      // console.log('date', run.date)
       const dateNum = run.date
       const [year, month, day] = dateNum.split('-')
-      const updatedDate = new Date(year, month - 1, day).toDateString().slice(0, -5)
+      const updatedDate = new Date(year, month - 1, day).toDateString().slice(0, -5)    
       return {
         _id: run._id,
         starttime: run.starttime,
-        date: updatedDate,
+        date: updatedDate
       }
     })
     res.render('runs/index', {
@@ -48,7 +46,7 @@ function show(req, res) {
   Run.findById(req.params.id)
   .populate('profiles')
   .then(run => {
-    // console.log(run.date.slice(5))
+    console.log(run.starttime)
     Profile.find({})
     .then(profiles => {
       res.render('runs/show', {

@@ -6,11 +6,15 @@
   <h1><%= title %></h1>
 
   <div>
-    <% runs.forEach(run => { %>
-      <%= run.date %>
-      <%= run.starttime %>
-      <a href="/runs/<%= run._id %>">details</a>
-    <% }) %> 
+    <% if (runs.length) { %>
+      <% runs.forEach(run => { %>
+        <%= run.date %>
+        <%= run.starttime %> 
+        <a href="/runs/<%= run._id %>">details</a>
+      <% }) %> 
+    <% } else { %>
+      <h2>NO RUNS SCHEDULED</h2>
+    <% } %>
   </div>
 
 </main>

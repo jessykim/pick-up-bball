@@ -2,54 +2,16 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const startSchema = new Schema({
-  hour: {
-    type: Number,
-    min: 1,
-    max: 12,
-    required: true
-  },
-  minutes: {
-    type: Number,
-    min: 0,
-    max: 59,
-    required: true
-  },
-  ampm: {
-    type: String,
-    enum: ['am', 'pm'],
-    required: true
-  }
-}, {
-  timestamps: true
-})
-
-const endSchema = new Schema({
-  hour: {
-    type: Number,
-    min: 1,
-    max: 12,
-    required: true
-  },
-  minutes: {
-    type: Number,
-    min: 0,
-    max: 59,
-    required: true
-  },
-  ampm: {
-    type: String,
-    enum: ['am', 'pm'],
-    required: true
-  }
-}, {
-  timestamps: true
-})
-
 const runSchema = new Schema({
   date: String,
-  starttime: [startSchema],
-  endtime: [endSchema],
+  starttime: {
+    type: String,
+    enum: ['5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM', '9:00 PM', '10:00 PM', '11:00 PM', '12:00 AM']
+  },
+  endtime: {
+    type: String,
+    enum: ['5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM', '9:00 PM', '10:00 PM', '11:00 PM', '12:00 AM']
+  },
   location: String,
   host: String,
   note: String,
