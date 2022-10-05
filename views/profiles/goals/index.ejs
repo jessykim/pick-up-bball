@@ -5,18 +5,17 @@
 <main>
   <h1><%= title %></h1>
   <div>
-    <h2>Goals</h2>
+    <a href="/profiles/<%= profile._id %>">
+      <button type="submit">Back to Profile</button>
+    </a>
+  </div>
+  <div>
     <form action="/profiles/<%= profile._id %>/goals" method="POST">
       <label>
         <input type="text" name="goal">
         <button type="submit">Add</button>
       </label>
     </form>
-    <div>
-      <a href="/profiles/<%= profile._id %>">
-        <button type="submit">Back to Profile</button>
-      </a>
-    </div>
     <% profile.goals.forEach(function(goal) { %>
       <%= goal.createdAt.toLocaleDateString() %>
       <%= goal.goal %> 
