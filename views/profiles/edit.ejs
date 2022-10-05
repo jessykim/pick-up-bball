@@ -7,18 +7,18 @@
   <form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
     <label>Position:</label>
     <select name="position">
-      <option value="No preference">No preference</option>
-      <option value="Center">Center</option>
-      <option value="Power forward">Power forward</option>
-      <option value="Small forward">Small forward</option>
-      <option value="Point guard">Point guard</option>
-      <option value="Shooting guard">Shooting guard</option>
+      <option value="No preference" <%= profile.position === 'No preference' ? 'selected' : '' %>>No preference</option>
+      <option value="Center" <%= profile.position === 'Center' ? 'selected' : '' %>>Center</option>
+      <option value="Power forward" <%= profile.position === 'Power forward' ? 'selected' : '' %>>Power forward</option>
+      <option value="Small forward" <%= profile.position === 'Small forward' ? 'selected' : '' %>>Small forward</option>
+      <option value="Point guard" <%= profile.position === 'Point guard' ? 'selected' : '' %>>Point guard</option>
+      <option value="Shooting guard" <%= profile.position === 'Shooting guard' ? 'selected' : '' %>>Shooting guard</option>
     </select>
     <label>Level:</label>
     <select name="level">
-      <option value="Amateur">Amateur</option>
-      <option value="Competitive">Competitive</option>
-      <option value="Elite">Elite</option>
+      <option value="Amateur" <%= profile.level === 'Amateur' ? 'selected' : '' %>>Amateur</option>
+      <option value="Competitive" <%= profile.level === 'Competitive' ? 'selected' : '' %>>Competitive</option>
+      <option value="Elite" <%= profile.position === 'Elite' ? 'selected' : '' %>>Elite</option>
     </select>
     <a href="/profiles/<%= profile._id %>">
       <button type="submit">Save</button>
