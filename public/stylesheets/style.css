@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: rgb(4, 29, 37);
+  background-color: #1B1C1E;
   color: #edeaeae0;;
   height: 100vh;
   /* Use a system font, if none are available use any found sans-sarif font */
@@ -22,7 +22,7 @@ body {
 nav {
   display: flex;
   justify-content: center;
-  background-color: rgb(4, 29, 37);
+  background-color: #1B1C1E;
   padding: 10px;
   border-bottom: 1px solid #ECF3F4;
   min-height: 60px;
@@ -48,6 +48,10 @@ a {
   color: #ECF3F4;
   font-size: 20px;
 } 
+
+a:hover {
+  color: rgb(207, 93, 93);
+}
 
 div.icon {
   align-self: center;
