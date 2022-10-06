@@ -10,23 +10,36 @@
       </a>
       <h1><%= title %></h1>
     </div>
-    <div>
-      <% if (isSelf) { %>
-        <form action="/profiles/<%= profile._id %>/goals" method="POST">
-          <label>
-            <input type="text" name="goal">
-            <button type="submit">Add</button>
-          </label>
+    <% if (isSelf) { %>
+      <div class="mb-3">
+        <form action="/profiles/<%= profile._id %>/goals" method="POST" class="goal-input">
+          <input type="text" name="goal" class="form-control" id="exampleFormControlTextarea1" rows="3">
+          <button type="submit" class="btn btn-outline-light"><i class="fa-solid fa-plus"></i></button>
         </form>
-      <% } %> 
+      </div>
+    <% } %> 
+    <div class="goal-list">
       <% profile.goals.forEach(function(goal) { %>
-        <%= goal.createdAt.toLocaleDateString() %>
-        <%= goal.goal %> 
-        <% if (isSelf) { %>
-          <form action="/profiles/<%= profile._id %>/goals/<%= goal._id %>?_method=DELETE" method="POST">
-            <button>X</button>
-          </form>
-        <% } %> 
+        <div class="card">
+          <div class="card-body">
+
+            <div id="goal">
+              <%= goal.goal %> 
+            </div>
+
+            <div class="date-btn">
+              <div id="date">
+                <%= goal.createdAt.toLocaleDateString() %>
+              </div>
+              <% if (isSelf) { %>
+                <form action="/profiles/<%= profile._id %>/goals/<%= goal._id %>?_method=DELETE" method="POST">
+                  <button id="delete-btn" type="submit" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-delete-left"></i></button>
+                </form>
+              <% } %> 
+            </div>
+
+          </div>
+        </div>
       <% }) %>
     </div>
   </div>

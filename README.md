@@ -12,11 +12,10 @@ A few of the current problems Andrew and his friends were having to deal with wh
 Though this app does not currently solve all the issues at hand, I thoroughly enjoyed creating a project with the intention of helping others and hopefully make life just a little bit easier.
 
 ## Link to App 🏀
-[HUSTLE ATL](https://pick-up-bball.fly.dev/)
+## [HUSTLE ATL](https://pick-up-bball.fly.dev/)
 
 ## Planning Materials
-- Trello
-  - [Trello Link](https://trello.com/b/4ZJCWAd6/pick-up-bball) 
+- [Trello Link](https://trello.com/b/4ZJCWAd6/pick-up-bball) 
   - Includes user stories, ice box items, and links to wireframes and the Entity Relationship (ER) Diagram
 
 ## Screenshots of the App 📸

@@ -3,108 +3,110 @@
 <%- include('../../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
   <div>
-    <a href="/profiles/<%= profile._id %>">
-      <button type="submit">Back to Profile</button>
-    </a>
-  </div>
-  <% if (isSelf) { %>
+    <h1><%= title %></h1>
     <div>
-      <form action="/profiles/<%= profile._id %>/stats" method="POST">
-        <div>
-          <label>Points: </label>
-          <input type="number" name="points">
-        </div>
-        <div>
-          <label>Rebounds: </label>
-          <input type="number" name="rebounds">
-        </div>
-        <div>
-          <label>Assists: </label>
-          <input type="number" name="assists">
-        </div>
-        <div>
-          <label>Blocks: </label>
-          <input type="number" name="blocks">
-        </div>
-        <div>
-          <label>Steals: </label>
-          <input type="number" name="steals">
-        </div>
-        <div>
-          <label>Turnovers: </label>
-          <input type="number" name="turnovers">
-        </div>
-        <div>
-          <label>Three Pointers: </label>
-          <input type="number" name="threepointers">
-        </div>
-        <div>
-          <label>Free Throws: </label>
-          <input type="number" name="freethrows">
-        </div>
-        <div>
-          <button type="submit">Add</button>
-        </div>
-      </form>
-  <% } %> 
-  <% if (profile.stats.length) { %>
-    <% profile.stats.forEach(function(stat) { %>
+      <a href="/profiles/<%= profile._id %>">
+        <button type="submit">Back to Profile</button>
+      </a>
+    </div>
+    <% if (isSelf) { %>
       <div>
-        <% if (stat.points > 0) { %>
-          Points: <%= stat.points %> 
+        <form action="/profiles/<%= profile._id %>/stats" method="POST">
+          <div>
+            <label>Points: </label>
+            <input type="number" name="points">
+          </div>
+          <div>
+            <label>Rebounds: </label>
+            <input type="number" name="rebounds">
+          </div>
+          <div>
+            <label>Assists: </label>
+            <input type="number" name="assists">
+          </div>
+          <div>
+            <label>Blocks: </label>
+            <input type="number" name="blocks">
+          </div>
+          <div>
+            <label>Steals: </label>
+            <input type="number" name="steals">
+          </div>
+          <div>
+            <label>Turnovers: </label>
+            <input type="number" name="turnovers">
+          </div>
+          <div>
+            <label>Three Pointers: </label>
+            <input type="number" name="threepointers">
+          </div>
+          <div>
+            <label>Free Throws: </label>
+            <input type="number" name="freethrows">
+          </div>
+          <div>
+            <button type="submit">Add</button>
+          </div>
+        </form>
+    <% } %> 
+    <% if (profile.stats.length) { %>
+      <% profile.stats.forEach(function(stat) { %>
+        <div>
+          <% if (stat.points > 0) { %>
+            Points: <%= stat.points %> 
+          <% } %> 
+        </div>
+        <div>
+          <% if (stat.rebounds > 0) { %>
+            Rebounds: <%= stat.rebounds %>
+          <% } %> 
+        </div>
+        <div>
+          <% if (stat.assists > 0) { %>
+            Assists: <%= stat.assists %>
+          <% } %> 
+        </div>
+        <div>
+          <% if (stat.blocks > 0) { %>
+            Blocks: <%= stat.blocks %>
+          <% } %> 
+        </div>
+        <div>
+          <% if (stat.steals > 0) { %>
+            Steals: <%= stat.steals %>
+          <% } %> 
+        </div>
+        <div>
+          <% if (stat.turnovers) { %>
+            Turnovers: <%= stat.turnovers %>
+          <% } %> 
+        </div>
+        <div>
+          <% if (stat.threepointers > 0) { %>
+            Three Pointers: <%= stat.threepointers %>      
+          <% } %> 
+        </div>
+        <div>
+          <% if (stat.freethrows) { %>
+            Free Throws: <%= stat.freethrows %> 
+          <% } %> 
+        </div>
+        <div>
+          <%= stat.createdAt.toLocaleDateString() %>
+        </div>
+        <% if (isSelf) { %>
+          <div>
+            <form action="/profiles/<%= profile._id %>/stats/<%= stat._id %>?_method=DELETE" method="POST">
+              <button>X</button>
+            </form>
+          </div>
         <% } %> 
-      </div>
-      <div>
-        <% if (stat.rebounds > 0) { %>
-          Rebounds: <%= stat.rebounds %>
-        <% } %> 
-      </div>
-      <div>
-        <% if (stat.assists > 0) { %>
-          Assists: <%= stat.assists %>
-        <% } %> 
-      </div>
-      <div>
-        <% if (stat.blocks > 0) { %>
-          Blocks: <%= stat.blocks %>
-        <% } %> 
-      </div>
-      <div>
-        <% if (stat.steals > 0) { %>
-          Steals: <%= stat.steals %>
-        <% } %> 
-      </div>
-      <div>
-        <% if (stat.turnovers) { %>
-          Turnovers: <%= stat.turnovers %>
-        <% } %> 
-      </div>
-      <div>
-        <% if (stat.threepointers > 0) { %>
-          Three Pointers: <%= stat.threepointers %>      
-        <% } %> 
-      </div>
-      <div>
-        <% if (stat.freethrows) { %>
-          Free Throws: <%= stat.freethrows %> 
-        <% } %> 
-      </div>
-      <div>
-        <%= stat.createdAt.toLocaleDateString() %>
-      </div>
-      <% if (isSelf) { %>
-        <div>
-          <form action="/profiles/<%= profile._id %>/stats/<%= stat._id %>?_method=DELETE" method="POST">
-            <button>X</button>
-          </form>
-        </div>
-      <% } %> 
-    <% }) %>
-  <% } else { %>
-    <h3>NO STATS RECORDED</h3>
-  <% } %> 
+      <% }) %>
+    <% } else { %>
+      <h3>NO STATS RECORDED</h3>
+    <% } %> 
+    </div>
   </div>
 </main>
 <%- include('../../partials/footer') %>

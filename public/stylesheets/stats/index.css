@@ -1,0 +1,8 @@
+main {
+  background-image: none;
+  margin-top: 50px;
+}
+
+main > div {
+  margin: 0;
+}
