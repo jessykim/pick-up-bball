@@ -14,7 +14,11 @@ html {
 body {
   background-color: #1B1C1E;
   color: #edeaeae0;;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: 'Roboto', system-ui, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
@@ -25,15 +29,19 @@ nav {
   background-color: #1B1C1E;
   padding: 10px;
   border-bottom: 1px solid #ECF3F4;
-  min-height: 60px;
+  height: 60px;
+  width: 100%;
 }
 
 main {
   display: flex;
   background-image: url('../images/IMG_0248.PNG');
   background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
   justify-content: center;
-  height: inherit;
+  height: calc(100vh - 60px);
+  width: 100%;
 }
 
 main > div {
@@ -55,7 +63,7 @@ a:hover {
 
 div.icon {
   align-self: center;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 .fa-solid::before {

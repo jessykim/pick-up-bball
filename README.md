@@ -1,8 +1,10 @@
 # pick-up-bball
 
+## Link to App 🏀
+## [HUSTLE ATL](https://pick-up-bball.fly.dev/)
+
 ## Background & Description
-🔥 Welcome to **HUSTLE ATL**! 🔥
-Where we build community one run at a time. 
+🔥 Welcome to **HUSTLE ATL**! 🔥 Where we build community one run at a time. 
 
 The inspiration behind this app came from speaking with my friend, Andrew, who plays basketball competitively and frequently hosts pick-up runs in Atlanta. He shared with me his idea of creating an app that will people with scheduling gym rentals and managing payments. With his permission and willingness to work with me, I decided to use this as an opportunity to take on my first client.
 
@@ -11,9 +13,6 @@ A few of the current problems Andrew and his friends were having to deal with wh
   - managing payments by having to send out Venmo requests
 
 Though this app does not currently solve all the issues at hand, I thoroughly enjoyed creating a project with the intention of helping others and hopefully make life just a little bit easier.
-
-## Link to App 🏀
-## [HUSTLE ATL](https://pick-up-bball.fly.dev/)
 
 ## Planning Materials
 - [Trello Link](https://trello.com/b/4ZJCWAd6/pick-up-bball) 
