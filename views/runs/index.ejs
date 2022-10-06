@@ -3,20 +3,24 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-
-  <div>
+  <div class="run-list">
+    <h1><%= title %></h1>
     <% if (runs.length) { %>
       <% runs.forEach(run => { %>
-        <%= run.date %>
-        <%= run.starttime %> 
-        <a href="/runs/<%= run._id %>">details</a>
+        <div>
+          <button type="button" class="btn btn-outline-light btn-lg">
+            <a href="/runs/<%= run._id %>">
+              <%= run.date %> @ <%= run.starttime %> 
+            </a>
+          </button>
+        </div>
       <% }) %> 
     <% } else { %>
-      <h2>NO RUNS SCHEDULED</h2>
+      <div>
+        <h2>NO RUNS SCHEDULED</h2>
+      </div>
     <% } %>
   </div>
-
 </main>
 
 <%- include('../partials/footer') %>
