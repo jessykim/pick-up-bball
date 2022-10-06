@@ -3,79 +3,92 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <div class="run-info">
+    <h1><%= title %></h1>
+    
+    <div class="run-details">
+      <div>
+        <p><strong>Date:</strong> <%= run.date %></p>
+        <p><strong>Start Time:</strong> <%= run.starttime %></p>
+        <p><strong>End Time:</strong> <%= run.endtime %></p>
+        <p><strong>Location:</strong> <%= run.location %></p>
+        <p><strong>Host:</strong> <%= run.host.name %></p>
+        <p><strong>Note:</strong> <%= run.note %></p>
+      </div>
+      <div class="btns">
+        <% if (run.host.equals(user?.profile._id)) { %>
+          <div>
+            <a href="/runs/<%= run._id %>/edit">
+              <button type="button" class="btn btn-outline-light btn-sm">Edit</button>
+            </a>
+          </div>
+          <div>
+            <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
+              <button type="submit" class="btn btn-outline-light btn-sm">Remove</button>
+            </form>
+          </div>
+        <% } %>
+        <div>
+          <a href="/runs">
+            <button type="button" class="btn btn-outline-light btn-sm">Back to Runs</button>
+          </a>
+        </div>
+      </div>
+    </div>
 
-  <h1><%= title %></h1>
-  <section>
-    <div>
-      <p>Date: <%= run.date %></p>
-      <p>Start Time: <%= run.starttime %></p>
-      <p>End Time: <%= run.endtime %></p>
-      <p>Location: <%= run.location %></p>
-      <p>Host: <%= run.host.name %></p>
-      <p>Note: <%= run.note %></p>
+    <div class="player-list">
+      <h2>Players</h2>
+      <div>
+        <div>
+          <% if (user) { %>
+            <form action="/runs/<%= run._id %>/profiles" method="POST">
+              <a href="/runs/<%= run._id %>">
+                <button type="submit" class="btn btn-outline-success btn-sm">Add Me</button>
+              </a>
+            </form> 
+          <% } %>
+        </div>
+        <div>
+          <% if (user) { %>
+            <form action="/runs/<%= run._id %>/profiles/?_method=DELETE" method="POST">
+              <a href="/runs/<%= run._id %>">
+                <button type="submit" class="btn btn-outline-danger btn-sm">Remove Me</button>
+              </a>
+            </form>
+          <% } %>
+        </div>
+      </div>
+      <div>
+        <% if (run.profiles.length) { %>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Player</th>
+                <th scope="col">Position</th>
+                <th scope="col">Level</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% run.profiles.forEach(profile => { %>
+                <tr>
+                  <td>
+                    <%= profile.name %>
+                  </td>
+                  <td>
+                    <%= profile.position %> 
+                  </td>
+                  <td>
+                    <%= profile.level %> 
+                  </td>
+                </tr>
+                <% }) %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <h3>NO PLAYERS LISTED</h3>
+        <% } %>
+      </div>
     </div>
-    <div>
-      <% if (run.host.equals(user?.profile._id)) { %>
-        <a href="/runs/<%= run._id %>/edit">
-          <button type="submit">Edit</button>
-        </a>
-        <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
-          <button type="submit">Remove</button>
-        </form>
-      <% } %>
-    </div>
-    <div>
-      <a href="/runs">
-        <button type="submit">Back to Runs</button>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <h2>Players</h2>
-    <% if (user) { %>
-      <form action="/runs/<%= run._id %>/profiles" method="POST">
-        <a href="/runs/<%= run._id %>">
-          <button type="submit">Add Me</button>
-        </a>
-      </form> 
-    <% } %>
-    <% if (user) { %>
-      <form action="/runs/<%= run._id %>/profiles/?_method=DELETE" method="POST">
-        <a href="/runs/<%= run._id %>">
-          <button type="submit">Remove Me</button>
-        </a>
-      </form>
-    <% } %> 
-    <% if (run.profiles.length) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>Player</th>
-            <th>Position</th>
-            <th>Level</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% run.profiles.forEach(profile => { %>
-            <tr>
-              <td>
-                <%= profile.name %>
-              </td>
-              <td>
-                <%= profile.position %> 
-              </td>
-              <td>
-                <%= profile.level %> 
-              </td>
-            </tr>
-            <% }) %>
-        </tbody>
-      </table>
-    <% } else { %>
-      <h3>NO PLAYERS LISTED</h3>
-    <% } %>
-  </section>
 </main>
 
 <%- include('../partials/footer') %>

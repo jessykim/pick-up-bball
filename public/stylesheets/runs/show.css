@@ -1,0 +1,58 @@
+main {
+  background-image: none;
+  margin-top: 50px;
+}
+
+main > div {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+p {
+  font-size: 17px;
+  padding: 5px;
+} 
+
+h2 {
+  margin: 20px;
+  text-align: center;
+}
+
+.run-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.run-details {
+  border: 1px solid #ECF3F4;
+  border-radius: 10px;
+  width: 300px;
+  padding: 15px;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  color: #ECF3F4;
+}
+
+.player-list > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
