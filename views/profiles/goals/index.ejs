@@ -22,11 +22,9 @@
       <% profile.goals.forEach(function(goal) { %>
         <div class="card">
           <div class="card-body">
-
             <div id="goal">
               <%= goal.goal %> 
             </div>
-
             <div class="date-btn">
               <div id="date">
                 <%= goal.createdAt.toLocaleDateString() %>
@@ -37,7 +35,6 @@
                 </form>
               <% } %> 
             </div>
-
           </div>
         </div>
       <% }) %>

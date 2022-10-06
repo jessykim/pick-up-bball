@@ -4,108 +4,123 @@
 
 <main>
   <div>
-    <h1><%= title %></h1>
     <div>
       <a href="/profiles/<%= profile._id %>">
-        <button type="submit">Back to Profile</button>
+        <i class="fa-solid fa-circle-chevron-left"></i>
       </a>
+      <h1><%= title %></h1>
     </div>
-    <% if (isSelf) { %>
-      <div>
-        <form action="/profiles/<%= profile._id %>/stats" method="POST">
-          <div>
-            <label>Points: </label>
-            <input type="number" name="points">
+
+    <div>
+      <% if (isSelf) { %>
+        <form action="/profiles/<%= profile._id %>/stats" method="POST" class="stat-input">
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-sm">Points</label>
+            <input type="number" name="points" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-sm">Rebounds</label>
+            <input type="number" name="rebounds" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-sm">Assists</label>
+            <input type="number" name="assists" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-sm">Blocks</label>
+            <input type="number" name="blocks" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-sm">Steals</label>
+            <input type="number" name="steals" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-sm">Turnovers</label>
+            <input type="number" name="turnovers" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-sm">Three Pointers</label>
+            <input type="number" name="threepointers" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-sm">Free Throws</label>
+            <input type="number" name="freethrows" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           </div>
           <div>
-            <label>Rebounds: </label>
-            <input type="number" name="rebounds">
-          </div>
-          <div>
-            <label>Assists: </label>
-            <input type="number" name="assists">
-          </div>
-          <div>
-            <label>Blocks: </label>
-            <input type="number" name="blocks">
-          </div>
-          <div>
-            <label>Steals: </label>
-            <input type="number" name="steals">
-          </div>
-          <div>
-            <label>Turnovers: </label>
-            <input type="number" name="turnovers">
-          </div>
-          <div>
-            <label>Three Pointers: </label>
-            <input type="number" name="threepointers">
-          </div>
-          <div>
-            <label>Free Throws: </label>
-            <input type="number" name="freethrows">
-          </div>
-          <div>
-            <button type="submit">Add</button>
+            <button type="submit" class="btn btn-outline-light"><i class="fa-solid fa-plus"></i></button>
           </div>
         </form>
-    <% } %> 
-    <% if (profile.stats.length) { %>
-      <% profile.stats.forEach(function(stat) { %>
-        <div>
-          <% if (stat.points > 0) { %>
-            Points: <%= stat.points %> 
-          <% } %> 
-        </div>
-        <div>
-          <% if (stat.rebounds > 0) { %>
-            Rebounds: <%= stat.rebounds %>
-          <% } %> 
-        </div>
-        <div>
-          <% if (stat.assists > 0) { %>
-            Assists: <%= stat.assists %>
-          <% } %> 
-        </div>
-        <div>
-          <% if (stat.blocks > 0) { %>
-            Blocks: <%= stat.blocks %>
-          <% } %> 
-        </div>
-        <div>
-          <% if (stat.steals > 0) { %>
-            Steals: <%= stat.steals %>
-          <% } %> 
-        </div>
-        <div>
-          <% if (stat.turnovers) { %>
-            Turnovers: <%= stat.turnovers %>
-          <% } %> 
-        </div>
-        <div>
-          <% if (stat.threepointers > 0) { %>
-            Three Pointers: <%= stat.threepointers %>      
-          <% } %> 
-        </div>
-        <div>
-          <% if (stat.freethrows) { %>
-            Free Throws: <%= stat.freethrows %> 
-          <% } %> 
-        </div>
-        <div>
-          <%= stat.createdAt.toLocaleDateString() %>
-        </div>
-        <% if (isSelf) { %>
-          <div>
-            <form action="/profiles/<%= profile._id %>/stats/<%= stat._id %>?_method=DELETE" method="POST">
-              <button>X</button>
-            </form>
+      <% } %> 
+    </div>
+
+    <div class="stat-list">
+      <% if (profile.stats.length) { %>
+        <% profile.stats.forEach(function(stat) { %>
+          
+          
+          <div class="card">
+            <div class="card-body">
+
+              <div>
+                <% if (stat.points > 0) { %>
+                  Points: <%= stat.points %> 
+                <% } %> 
+              </div>
+              <div>
+                <% if (stat.rebounds > 0) { %>
+                  Rebounds: <%= stat.rebounds %>
+                <% } %> 
+              </div>
+              <div>
+                <% if (stat.assists > 0) { %>
+                  Assists: <%= stat.assists %>
+                <% } %> 
+              </div>
+              <div>
+                <% if (stat.blocks > 0) { %>
+                  Blocks: <%= stat.blocks %>
+                <% } %> 
+              </div>
+              <div>
+                <% if (stat.steals > 0) { %>
+                  Steals: <%= stat.steals %>
+                <% } %> 
+              </div>
+              <div>
+                <% if (stat.turnovers) { %>
+                  Turnovers: <%= stat.turnovers %>
+                <% } %> 
+              </div>
+              <div>
+                <% if (stat.threepointers > 0) { %>
+                  Three Pointers: <%= stat.threepointers %>      
+                <% } %> 
+              </div>
+              <div>
+                <% if (stat.freethrows) { %>
+                  Free Throws: <%= stat.freethrows %> 
+                <% } %> 
+              </div>
+              <div class="date-btn">
+                <div id="date">
+                  <%= stat.createdAt.toLocaleDateString() %>
+                </div>
+                <% if (isSelf) { %>
+                  <div>
+                    <form action="/profiles/<%= profile._id %>/stats/<%= stat._id %>?_method=DELETE" method="POST">
+                      <button id="delete-btn type="submit" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-delete-left"></i></button>
+                    </form>
+                  </div>
+                <% } %> 
+              </div>
+            </div>
           </div>
-        <% } %> 
-      <% }) %>
-    <% } else { %>
-      <h3>NO STATS RECORDED</h3>
-    <% } %> 
+
+
+        <% }) %>
+      <% } else { %>
+        <h3>NO STATS RECORDED</h3>
+      <% } %> 
     </div>
   </div>
 </main>

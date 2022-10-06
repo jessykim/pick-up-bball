@@ -6,3 +6,45 @@ main {
 main > div {
   margin: 0;
 }
+
+.card {
+  background: none;
+  border: 1px solid #ECF3F4;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+.date-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+form.stat-input {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+form.stat-input > div:last-child {
+  place-self: flex-end;
+}
+
+#date {
+  font-size: 12px;
+}
+
+#delete-btn {
+  justify-content: flex-end;
+}
