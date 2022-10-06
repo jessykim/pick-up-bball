@@ -3,30 +3,32 @@
 <%- include('../../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
   <div>
-    <a href="/profiles/<%= profile._id %>">
-      <button type="submit">Back to Profile</button>
-    </a>
-  </div>
-  <div>
-    <% if (isSelf) { %>
-      <form action="/profiles/<%= profile._id %>/goals" method="POST">
-        <label>
-          <input type="text" name="goal">
-          <button type="submit">Add</button>
-        </label>
-      </form>
-    <% } %> 
-    <% profile.goals.forEach(function(goal) { %>
-      <%= goal.createdAt.toLocaleDateString() %>
-      <%= goal.goal %> 
+    <div>
+      <a href="/profiles/<%= profile._id %>">
+        <i class="fa-solid fa-circle-chevron-left"></i>
+      </a>
+      <h1><%= title %></h1>
+    </div>
+    <div>
       <% if (isSelf) { %>
-        <form action="/profiles/<%= profile._id %>/goals/<%= goal._id %>?_method=DELETE" method="POST">
-          <button>X</button>
+        <form action="/profiles/<%= profile._id %>/goals" method="POST">
+          <label>
+            <input type="text" name="goal">
+            <button type="submit">Add</button>
+          </label>
         </form>
       <% } %> 
-    <% }) %>
+      <% profile.goals.forEach(function(goal) { %>
+        <%= goal.createdAt.toLocaleDateString() %>
+        <%= goal.goal %> 
+        <% if (isSelf) { %>
+          <form action="/profiles/<%= profile._id %>/goals/<%= goal._id %>?_method=DELETE" method="POST">
+            <button>X</button>
+          </form>
+        <% } %> 
+      <% }) %>
+    </div>
   </div>
 </main>
 
