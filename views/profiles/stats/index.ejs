@@ -10,7 +10,6 @@
       </a>
       <h1><%= title %></h1>
     </div>
-
     <div>
       <% if (isSelf) { %>
         <form action="/profiles/<%= profile._id %>/stats" method="POST" class="stat-input">
@@ -52,15 +51,11 @@
         </form>
       <% } %> 
     </div>
-
     <div class="stat-list">
       <% if (profile.stats.length) { %>
         <% profile.stats.forEach(function(stat) { %>
-          
-          
           <div class="card">
             <div class="card-body">
-
               <div>
                 <% if (stat.points > 0) { %>
                   Points: <%= stat.points %> 
@@ -115,8 +110,6 @@
               </div>
             </div>
           </div>
-
-
         <% }) %>
       <% } else { %>
         <h3>NO STATS RECORDED</h3>

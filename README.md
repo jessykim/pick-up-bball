@@ -1,7 +1,8 @@
 # pick-up-bball
 
 ## Background & Description
-Welcome to **HUSTLE ATL**! 🔥 Where we build community one run at a time. 
+🔥 Welcome to **HUSTLE ATL**! 🔥
+Where we build community one run at a time. 
 
 The inspiration behind this app came from speaking with my friend, Andrew, who plays basketball competitively and frequently hosts pick-up runs in Atlanta. He shared with me his idea of creating an app that will people with scheduling gym rentals and managing payments. With his permission and willingness to work with me, I decided to use this as an opportunity to take on my first client.
 
@@ -30,12 +31,12 @@ TBD
   - HTML
   - CSS
   - JavaScript
-  - GitHub
-  - Visual Studio Code
-  - Procreate
   - Express/Node
   - Mongoose/MongoDB
   - Google OAuth
+  - GitHub
+  - Visual Studio Code
+  - Procreate
 
 ## Credits
 - [Unsplash](https://unsplash.com/)
@@ -45,8 +46,9 @@ TBD
 - [Font Awesome](https://fontawesome.com/)
 
 ## Icebox Items 🧊
-  - Provide the option to turn on notifications and be alerted of an upcoming run that a user is signed up for
-  - Provide a page with a list of all the upcoming runs a user is wanting to attend
-  - Create admin authorization to limit who gets to schedule a run
-  - Provide easy access for users to pay the host of a run directly through the app
-  - Include a time input where users can schedule runs at any time throughout the day
+  - [ ] Provide the option to turn on notifications and be alerted of an upcoming run that a user is signed up for
+  - [ ] Provide a page with a list of all the upcoming runs a user is wanting to attend
+  - [ ] Create admin authorization to limit who gets to schedule a run
+  - [ ] Provide easy access for users to pay the host of a run directly through the app
+  - [ ] Include a time input where users can schedule runs at any time throughout the day
+  - [ ] List the scheduled runs in order from earlier to later dates

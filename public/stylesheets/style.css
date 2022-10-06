@@ -16,8 +16,7 @@ body {
   color: #edeaeae0;;
   height: 100vh;
   /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', system-ui, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 nav {
