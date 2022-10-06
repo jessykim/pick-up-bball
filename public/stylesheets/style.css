@@ -14,54 +14,46 @@ html {
 body {
   background-color: rgb(4, 29, 37);
   color: #edeaeae0;;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0px;
-  flex-direction: column;
+  height: 100vh;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
-  margin: 0;
-
 }
 
 nav {
   display: flex;
+  justify-content: center;
   background-color: rgb(4, 29, 37);
   padding: 10px;
   border-bottom: 1px solid #ECF3F4;
-  width: 100%;
-  justify-content: center;
+  min-height: 60px;
 }
 
 main {
+  display: flex;
   background-image: url('../images/IMG_0248.PNG');
   background-size: cover;
-  border: 1px solid red;
-  width: 100%;
+  justify-content: center;
+  height: inherit;
 }
 
 main > div {
   margin-top: 50px;
-  text-align: center;
 }
 
 nav > div {
   display: flex;
-  flex-direction: row;
-}
-
-div.icon {
-  align-self: center;
-  padding: 0 30px;
 }
 
 a {
   color: #ECF3F4;
   font-size: 20px;
 } 
+
+div.icon {
+  align-self: center;
+  padding: 0 30px;
+}
 
 .fa-solid::before {
   font-family: "Font Awesome 5 Free";

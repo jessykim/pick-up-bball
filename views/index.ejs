@@ -1,9 +1,11 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
-<main>
+<main id="bottom">
   <div>
-    <h1>hello <%= user ? user.profile.name : "" %></h1>
+    <% if (user) { %>
+      <h1>hello <%= user ? user.profile.name : "" %></h1>
+    <% } %> 
   </div>
 </main>
 
