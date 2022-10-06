@@ -43,7 +43,7 @@
           <% if (user) { %>
             <form action="/runs/<%= run._id %>/profiles" method="POST">
               <a href="/runs/<%= run._id %>">
-                <button type="submit" class="btn btn-outline-success btn-sm">Add Me</button>
+                <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-user-plus"></i></button>
               </a>
             </form> 
           <% } %>
@@ -52,7 +52,7 @@
           <% if (user) { %>
             <form action="/runs/<%= run._id %>/profiles/?_method=DELETE" method="POST">
               <a href="/runs/<%= run._id %>">
-                <button type="submit" class="btn btn-outline-danger btn-sm">Remove Me</button>
+                <button type="submit" class="btn btn-outline-danger"><i class="fa-solid fa-user-minus"></i></button>
               </a>
             </form>
           <% } %>
