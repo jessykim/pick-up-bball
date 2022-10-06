@@ -27,7 +27,7 @@ function index(req, res) {
 
 function newRun(req, res) {
   res.render('runs/new', {
-    title: 'Create Run'
+    title: 'Create a Run'
   })
 }
 

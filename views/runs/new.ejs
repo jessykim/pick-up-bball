@@ -4,49 +4,51 @@
 
 <main>
   <% if (user) { %>
-    <h1><%= title %></h1> 
-    <form id="new-run-form" action="/runs" method="POST">
-      <div>
-        <label>Date:</label>
-        <input type="date" name="date">
-      </div>
-      <div>
-        <label>Start Time:</label>
-        <select name="starttime">
-          <option value="5:00 PM">5:00 PM</option>
-          <option value="6:00 PM">6:00 PM</option>
-          <option value="7:00 PM">7:00 PM</option>
-          <option value="8:00 PM">8:00 PM</option>
-          <option value="9:00 PM">9:00 PM</option>
-          <option value="10:00 PM">10:00 PM</option>
-          <option value="11:00 PM">11:00 PM</option>
-          <option value="12:00 AM">12:00 AM</option>
-        </select>
-      </div>
-      <div>
-        <label>End Time:</label>
-        <select name="endtime">
-          <option value="5:00 PM">5:00 PM</option>
-          <option value="6:00 PM">6:00 PM</option>
-          <option value="7:00 PM">7:00 PM</option>
-          <option value="8:00 PM">8:00 PM</option>
-          <option value="9:00 PM">9:00 PM</option>
-          <option value="10:00 PM">10:00 PM</option>
-          <option value="11:00 PM">11:00 PM</option>
-          <option value="12:00 AM">12:00 AM</option>
-        </select>
-      </div>
-      <div>
-        <label>Location:</label>
-        <input type="text" name="location">
-      </div>
-      <div>
-        <label>Note:</label>
-        <input type="text" name="note">
-      </div>
-      <div>
-        <button type="submit">Add Run</button>
-      </div>
+    <div>
+      <h1><%= title %></h1> 
+      <form id="new-run-form" action="/runs" method="POST">
+        <div class="input-group mb-3">
+          <label class="input-group-text" id="inputGroup-sizing-default">Date</label>
+          <input type="date" name="date" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01">Start Time</label>
+          <select name="starttime" class="form-select" id="inputGroupSelect01">
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+            <option value="8:00 PM">8:00 PM</option>
+            <option value="9:00 PM">9:00 PM</option>
+            <option value="10:00 PM">10:00 PM</option>
+            <option value="11:00 PM">11:00 PM</option>
+            <option value="12:00 AM">12:00 AM</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01">End Time</label>
+          <select name="endtime" class="form-select" id="inputGroupSelect01">
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+            <option value="8:00 PM">8:00 PM</option>
+            <option value="9:00 PM">9:00 PM</option>
+            <option value="10:00 PM">10:00 PM</option>
+            <option value="11:00 PM">11:00 PM</option>
+            <option value="12:00 AM">12:00 AM</option>
+          </select>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <label class="input-group-text" id="inputGroup-sizing-sm">Location</label>
+          <input type="text" name="location" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <label class="input-group-text" id="inputGroup-sizing-sm">Add. Info</label>
+          <input type="text" name="note" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div>
+          <button type="submit" type="button" class="btn btn-secondary">Add Run</button>
+        </div>
+    </div>
     <% } %> 
   </form>
 
