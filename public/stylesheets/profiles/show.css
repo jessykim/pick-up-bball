@@ -1,0 +1,40 @@
+main {
+  background-image: none;
+  margin-top: 50px;
+}
+
+main > div {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+div.profile-info {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ECF3F4;;
+}
+
+.profile-info > img {
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.btns {
+  display: flex;
+}
+
+.btns > a {
+  padding: 15px;
+  font-size: 20px;
+}
