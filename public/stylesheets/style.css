@@ -14,7 +14,7 @@ html {
 body {
   background-color: #1B1C1E;
   color: #edeaeae0;;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,6 @@ main {
   background-image: url('../images/IMG_0248.PNG');
   background-size: cover;
   background-position: top;
-  background-attachment: fixed;
   justify-content: center;
   height: calc(100vh - 60px);
   width: 100%;
@@ -73,3 +72,36 @@ div.icon {
 .fa-regular::before {
   font-family: "Font Awesome 5 Free";
 }
+
+@media only screen and (max-width: 480px) {
+  body {
+    max-width: 480px;
+  }
+
+  nav {
+    padding: 5px;
+    height: 40px;
+  }
+  
+  main {
+    background-image: url('../images/App_Background.png');
+    height: calc(100vh - 40px);
+  }
+
+  div.icon {
+    padding: 8px;
+  }
+
+  main > div {
+    max-width: 200px; 
+    margin-top: 30px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  a {
+    font-size: 20px;
+  }
+} 
