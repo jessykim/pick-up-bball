@@ -1,10 +1,11 @@
 # pick-up-bball
 
-## Link to App 🏀
-## [HUSTLE ATL](https://pick-up-bball.fly.dev/)
+## ☟ LINK BELOW ☟
+## 🏀 [HUSTLE ATL](https://pick-up-bball.fly.dev/) 🏀
 
 ## Background & Description
-🔥 Welcome to **HUSTLE ATL**! 🔥 Where we build community one run at a time. 
+🔥 Welcome to **HUSTLE ATL**! 🔥<br /> 
+Where we build community one run at a time. 
 
 The inspiration behind this app came from speaking with my friend, Andrew, who plays basketball competitively and frequently hosts pick-up runs in Atlanta. He shared with me his idea of creating an app that will people with scheduling gym rentals and managing payments. With his permission and willingness to work with me, I decided to use this as an opportunity to take on my first client.
 
@@ -19,12 +20,12 @@ Though this app does not currently solve all the issues at hand, I thoroughly en
   - Includes user stories, ice box items, and links to wireframes and the Entity Relationship (ER) Diagram
 
 ## Screenshots of the App 📸
-TBD
-<!-- ![game at state](./images/game-state.png)
-
-![game during war](./images/war.png)
-
-![chewbacca's message](./images/chewy.png) -->
+![Home Page](./public/images/home%20page.png)
+![Run Info](./public/images/run2.png)<br />
+![Home Page Mobile](./public/images/homepagemobile.PNG)
+![Scheduled Run and Players](./public/images/run.PNG)
+![User Profile](./public/images/userprofile.PNG)
+![User Game Stats](./public/images/gamestats.PNG)
 
 ## Technology Used
   - HTML

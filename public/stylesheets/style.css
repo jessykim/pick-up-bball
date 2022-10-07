@@ -85,7 +85,6 @@ div.icon {
   
   main {
     background-image: url('../images/App_Background.png');
-    height: calc(100vh - 40px);
   }
 
   div.icon {
