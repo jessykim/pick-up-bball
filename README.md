@@ -7,17 +7,17 @@
 🔥 Welcome to **HUSTLE ATL**! 🔥<br /> 
 Where we build community one run at a time. 
 
-The inspiration behind this app came from speaking with my friend, Andrew, who plays basketball competitively and frequently hosts pick-up runs in Atlanta. He shared with me his idea of creating an app that will people with scheduling gym rentals and managing payments. With his permission and willingness to work with me, I decided to use this as an opportunity to take on my first client.
+The inspiration behind this app came from speaking with my friend, Andrew, who plays basketball competitively and frequently hosts pick-up runs in Atlanta. He shared with me his idea of creating an app that assists people with scheduling gym rentals and managing payments. With his permission and willingness to work with me, I decided to use this as an opportunity to take on my first client.
 
-A few of the current problems Andrew and his friends were having to deal with when scheduling runs include:
+A few of the current problems Andrew and his friends were dealing with when scheduling runs include:
   - inconvenience of messaging people back and forth on whether they plan to attend
-  - managing payments by having to send out Venmo requests
+  - managing payments by sending out Venmo requests
 
-Though this app does not currently solve all the issues at hand, I thoroughly enjoyed creating a project with the intention of helping others and hopefully make life just a little bit easier.
+Though this app does not solve all the issues at hand, I thoroughly enjoyed creating a project with the intention of helping others and hopefully make their lives just a little bit easier.
 
 ## Planning Materials
 - [Trello Link](https://trello.com/b/4ZJCWAd6/pick-up-bball) 
-  - Includes user stories, ice box items, and links to wireframes and the Entity Relationship (ER) Diagram
+  - Includes user stories, ice box items, and links to the Entity Relationship (ER) Diagram and wireframes
 
 ## Screenshots of the App 📸
 ![Home Page](./public/images/home%20page.png)
