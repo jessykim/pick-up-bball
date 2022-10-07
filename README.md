@@ -23,7 +23,9 @@ Though this app does not solve all the issues at hand, I thoroughly enjoyed crea
 ![Home Page](./public/images/home%20page.png)
 ![Run Info](./public/images/run2.png)<br />
 ![Home Page Mobile](./public/images/homepagemobile.PNG)
+![Create a Run](./public/images/createrun.PNG)
 ![Scheduled Run and Players](./public/images/run.PNG)
+![All Runs](./public/images/allruns.PNG)
 ![User Profile](./public/images/userprofile.PNG)
 ![User Game Stats](./public/images/gamestats.PNG)
 
