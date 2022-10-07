@@ -13,7 +13,7 @@ A few of the current problems Andrew and his friends were dealing with when sche
   - inconvenience of messaging people back and forth on whether they plan to attend
   - managing payments by sending out Venmo requests
 
-Though this app does not solve all the issues at hand, I thoroughly enjoyed creating a project with the intention of helping others and hopefully make their lives just a little bit easier.
+Though this app does not solve all the issues at hand, I thoroughly enjoyed creating a project with the intention of helping others and hopefully making their lives just a little bit easier.
 
 ## Planning Materials
 - [Trello Link](https://trello.com/b/4ZJCWAd6/pick-up-bball) 
