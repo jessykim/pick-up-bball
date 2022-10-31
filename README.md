@@ -30,22 +30,21 @@ Though this app does not solve all the issues at hand, I thoroughly enjoyed crea
 ![User Game Stats](./public/images/gamestats.PNG)
 
 ## Technology Used
-  - HTML
   - CSS
-  - JavaScript
   - Express/Node
-  - Mongoose/MongoDB
+  - Git/GitHub
   - Google OAuth
-  - GitHub
-  - Visual Studio Code
+  - HTML
+  - JavaScript
+  - Mongoose/MongoDB
   - Procreate
 
 ## Credits
-- [Unsplash](https://unsplash.com/)
-- [Favicon.io](https://favicon.io/)
-- [Google Fonts](https://fonts.google.com/)
 - [Bootstrap](https://getbootstrap.com/)
+- [Favicon.io](https://favicon.io/)
 - [Font Awesome](https://fontawesome.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Unsplash](https://unsplash.com/)
 
 ## Icebox Items 🧊
   - [ ] Provide the option to turn on notifications and be alerted of an upcoming run that a user is signed up for
