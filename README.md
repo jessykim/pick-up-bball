@@ -34,7 +34,6 @@ Though this app does not solve all the issues at hand, I thoroughly enjoyed crea
   - Express/Node
   - Git/GitHub
   - Google OAuth
-  - HTML
   - JavaScript
   - Mongoose/MongoDB
   - Procreate
