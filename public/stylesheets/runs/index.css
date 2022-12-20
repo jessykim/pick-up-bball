@@ -1,6 +1,7 @@
 main {
   background-image: none;
   margin-top: 50px;
+  height: 100vh;
 }
 
 main > div {

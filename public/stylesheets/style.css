@@ -14,7 +14,7 @@ html {
 body {
   background-color: #1B1C1E;
   color: #edeaeae0;;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
