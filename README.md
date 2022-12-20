@@ -51,4 +51,4 @@ Though this app does not solve all the issues at hand, I thoroughly enjoyed crea
   - [ ] Create admin authorization to limit who gets to schedule a run
   - [ ] Provide easy access for users to pay the host of a run directly through the app
   - [ ] Include a time input where users can schedule runs at any time throughout the day
-  - [ ] List the scheduled runs in order from earlier to later dates
+  - [x] List the scheduled runs in order from earlier to later dates
