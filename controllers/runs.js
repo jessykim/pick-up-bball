@@ -4,6 +4,9 @@ import { Profile } from '../models/profile.js'
 function index(req, res) {
   Run.find({})
   .then(runs => {
+    runs.sort(function(a, b) {
+      return new Date(a.date) - new Date(b.date)
+    })
     const updatedRuns = runs.map(run => {
       const dateNum = run.date
       const [year, month, day] = dateNum.split('-')
